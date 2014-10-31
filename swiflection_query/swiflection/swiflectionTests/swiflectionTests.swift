@@ -1,15 +1,15 @@
 //
-//  swiflectionTests.swift
-//  swiflectionTests
+//  SwiflectionTests.swift
+//  SwiflectionTests
 //
 //  Created by Leo G Dion on 10/30/14.
 //  Copyright (c) 2014 BrightDigit, LLC. All rights reserved.
 //
 
-import UIKit
+import Cocoa
 import XCTest
 
-class swiflectionTests: XCTestCase {
+class SwiflectionTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
