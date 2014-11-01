@@ -39,8 +39,9 @@ class SwiflectionTests: XCTestCase {
   
   func testLoadLibrary() {
     //var filter = B
-    var xctestBundleSource = AllBundleSource().filter(BundleSourcePathExtensionFilter(pathExtension: "xctest"))
+    var xctestBundleSource = AllBundleSource().filter(BundleSourcePathExtensionFilter(pathExtension: "xctest").filter)
     
+    //xctestBundleSource.map(BundleClosureMap({
     /*
     var query = xctestBundleSource.select{
       (bundle) in

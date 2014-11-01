@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class BundleSourcePathExtensionFilter : BundleFilter {
+public class BundleSourcePathExtensionFilter  {
   
   let pathExtension:String
   
