@@ -7,34 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B118E871A03B1B000F0647A /* Swiflection.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B118E861A03B1B000F0647A /* Swiflection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B118E941A03B1B000F0647A /* SwiflectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118E931A03B1B000F0647A /* SwiflectionTests.swift */; };
 		7B118EAD1A03B22300F0647A /* Swiflection_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B118EA21A03B22300F0647A /* Swiflection_IOS.framework */; };
 		7B118F171A03B61500F0647A /* Swiflection_Sample_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B118EEC1A03B46A00F0647A /* Swiflection_Sample_OSX.framework */; };
 		7B118F1A1A03CB5B00F0647A /* SwiflectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118E931A03B1B000F0647A /* SwiflectionTests.swift */; };
-		7B118F1D1A03CE8200F0647A /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118F1C1A03CE8200F0647A /* Query.swift */; };
-		7B118F201A03CF0900F0647A /* QueryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118F1F1A03CF0900F0647A /* QueryBuilder.swift */; };
-		7B118F4C1A03E14800F0647A /* FrameworkQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118F4B1A03E14800F0647A /* FrameworkQuery.swift */; };
-		7B118F521A03E1BD00F0647A /* PathBundleSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118F511A03E1BD00F0647A /* PathBundleSource.swift */; };
-		7B118F551A03E25F00F0647A /* AllBundleSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118F541A03E25F00F0647A /* AllBundleSource.swift */; };
-		7B118F581A03E3FD00F0647A /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118F571A03E3FD00F0647A /* Bundle.swift */; };
-		7B118F6A1A045CD300F0647A /* FilterBundleSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118F691A045CD300F0647A /* FilterBundleSource.swift */; };
-		7B118F6D1A04667A00F0647A /* BundleClosureMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118F6C1A04667A00F0647A /* BundleClosureMap.swift */; };
-		7B118F701A04669700F0647A /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118F6F1A04669700F0647A /* Source.swift */; };
-		7B6F56181A054EED000FD27D /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6F56171A054EED000FD27D /* Class.swift */; };
-		7B6F561C1A054FA7000FD27D /* BundleSourcePathExtensionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6F561B1A054FA7000FD27D /* BundleSourcePathExtensionFilter.swift */; };
-		7B6F561F1A055197000FD27D /* BundleSourcePathExtensionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6F561B1A054FA7000FD27D /* BundleSourcePathExtensionFilter.swift */; };
-		7B6F56201A055197000FD27D /* Swiflection.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B118E861A03B1B000F0647A /* Swiflection.h */; };
-		7B6F56211A055197000FD27D /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118F1C1A03CE8200F0647A /* Query.swift */; };
-		7B6F56221A055197000FD27D /* QueryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118F1F1A03CF0900F0647A /* QueryBuilder.swift */; };
-		7B6F56231A055197000FD27D /* FrameworkQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118F4B1A03E14800F0647A /* FrameworkQuery.swift */; };
-		7B6F56241A055197000FD27D /* PathBundleSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118F511A03E1BD00F0647A /* PathBundleSource.swift */; };
-		7B6F56251A055197000FD27D /* AllBundleSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118F541A03E25F00F0647A /* AllBundleSource.swift */; };
-		7B6F56261A055197000FD27D /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118F571A03E3FD00F0647A /* Bundle.swift */; };
-		7B6F56271A055197000FD27D /* FilterBundleSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118F691A045CD300F0647A /* FilterBundleSource.swift */; };
-		7B6F56281A055197000FD27D /* BundleClosureMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118F6C1A04667A00F0647A /* BundleClosureMap.swift */; };
-		7B6F56291A055197000FD27D /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118F6F1A04669700F0647A /* Source.swift */; };
-		7B6F562A1A055197000FD27D /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6F56171A054EED000FD27D /* Class.swift */; };
+		7BC6413D1A06B02900442411 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6413C1A06B02900442411 /* Source.swift */; };
+		7BC6413E1A06B02900442411 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6413C1A06B02900442411 /* Source.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +56,6 @@
 /* Begin PBXFileReference section */
 		7B118E811A03B1B000F0647A /* Swiflection_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiflection_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B118E851A03B1B000F0647A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7B118E861A03B1B000F0647A /* Swiflection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Swiflection.h; path = Swiflection/Swiflection.h; sourceTree = "<group>"; };
 		7B118E8C1A03B1B000F0647A /* SwiflectionTests_OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiflectionTests_OSX.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B118E921A03B1B000F0647A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B118E931A03B1B000F0647A /* SwiflectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiflectionTests.swift; sourceTree = "<group>"; };
@@ -87,17 +64,7 @@
 		7B118EAC1A03B22300F0647A /* Swiflection_IOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swiflection_IOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B118EB21A03B22300F0647A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B118EE61A03B46900F0647A /* Swiflection-Sample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Swiflection-Sample.xcodeproj"; path = "Examples/Swiflection-Sample/Swiflection-Sample.xcodeproj"; sourceTree = "<group>"; };
-		7B118F1C1A03CE8200F0647A /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Query.swift; path = Swiflection/Query.swift; sourceTree = "<group>"; };
-		7B118F1F1A03CF0900F0647A /* QueryBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryBuilder.swift; path = Swiflection/QueryBuilder.swift; sourceTree = "<group>"; };
-		7B118F4B1A03E14800F0647A /* FrameworkQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrameworkQuery.swift; path = Swiflection/FrameworkQuery.swift; sourceTree = "<group>"; };
-		7B118F511A03E1BD00F0647A /* PathBundleSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathBundleSource.swift; path = Swiflection/PathBundleSource.swift; sourceTree = "<group>"; };
-		7B118F541A03E25F00F0647A /* AllBundleSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllBundleSource.swift; path = Swiflection/AllBundleSource.swift; sourceTree = "<group>"; };
-		7B118F571A03E3FD00F0647A /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bundle.swift; path = Swiflection/Bundle.swift; sourceTree = "<group>"; };
-		7B118F691A045CD300F0647A /* FilterBundleSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilterBundleSource.swift; path = Swiflection/FilterBundleSource.swift; sourceTree = "<group>"; };
-		7B118F6C1A04667A00F0647A /* BundleClosureMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BundleClosureMap.swift; path = Swiflection/BundleClosureMap.swift; sourceTree = "<group>"; };
-		7B118F6F1A04669700F0647A /* Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Source.swift; path = Swiflection/Source.swift; sourceTree = "<group>"; };
-		7B6F56171A054EED000FD27D /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Class.swift; path = Swiflection/Class.swift; sourceTree = "<group>"; };
-		7B6F561B1A054FA7000FD27D /* BundleSourcePathExtensionFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BundleSourcePathExtensionFilter.swift; path = Swiflection/BundleSourcePathExtensionFilter.swift; sourceTree = "<group>"; };
+		7BC6413C1A06B02900442411 /* Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,18 +239,7 @@
 		7B118F181A03CB3700F0647A /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				7B6F561B1A054FA7000FD27D /* BundleSourcePathExtensionFilter.swift */,
-				7B118E861A03B1B000F0647A /* Swiflection.h */,
-				7B118F1C1A03CE8200F0647A /* Query.swift */,
-				7B118F1F1A03CF0900F0647A /* QueryBuilder.swift */,
-				7B118F4B1A03E14800F0647A /* FrameworkQuery.swift */,
-				7B118F511A03E1BD00F0647A /* PathBundleSource.swift */,
-				7B118F541A03E25F00F0647A /* AllBundleSource.swift */,
-				7B118F571A03E3FD00F0647A /* Bundle.swift */,
-				7B118F691A045CD300F0647A /* FilterBundleSource.swift */,
-				7B118F6C1A04667A00F0647A /* BundleClosureMap.swift */,
-				7B118F6F1A04669700F0647A /* Source.swift */,
-				7B6F56171A054EED000FD27D /* Class.swift */,
+				7BC6413C1A06B02900442411 /* Source.swift */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -303,7 +259,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B118E871A03B1B000F0647A /* Swiflection.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +266,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B6F56201A055197000FD27D /* Swiflection.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,17 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B6F56181A054EED000FD27D /* Class.swift in Sources */,
-				7B118F6D1A04667A00F0647A /* BundleClosureMap.swift in Sources */,
-				7B118F6A1A045CD300F0647A /* FilterBundleSource.swift in Sources */,
-				7B118F551A03E25F00F0647A /* AllBundleSource.swift in Sources */,
-				7B118F581A03E3FD00F0647A /* Bundle.swift in Sources */,
-				7B118F201A03CF0900F0647A /* QueryBuilder.swift in Sources */,
-				7B118F4C1A03E14800F0647A /* FrameworkQuery.swift in Sources */,
-				7B118F1D1A03CE8200F0647A /* Query.swift in Sources */,
-				7B6F561C1A054FA7000FD27D /* BundleSourcePathExtensionFilter.swift in Sources */,
-				7B118F521A03E1BD00F0647A /* PathBundleSource.swift in Sources */,
-				7B118F701A04669700F0647A /* Source.swift in Sources */,
+				7BC6413D1A06B02900442411 /* Source.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,17 +463,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B6F56251A055197000FD27D /* AllBundleSource.swift in Sources */,
-				7B6F562A1A055197000FD27D /* Class.swift in Sources */,
-				7B6F56261A055197000FD27D /* Bundle.swift in Sources */,
-				7B6F56221A055197000FD27D /* QueryBuilder.swift in Sources */,
-				7B6F56241A055197000FD27D /* PathBundleSource.swift in Sources */,
-				7B6F56271A055197000FD27D /* FilterBundleSource.swift in Sources */,
-				7B6F56281A055197000FD27D /* BundleClosureMap.swift in Sources */,
-				7B6F56211A055197000FD27D /* Query.swift in Sources */,
-				7B6F561F1A055197000FD27D /* BundleSourcePathExtensionFilter.swift in Sources */,
-				7B6F56291A055197000FD27D /* Source.swift in Sources */,
-				7B6F56231A055197000FD27D /* FrameworkQuery.swift in Sources */,
+				7BC6413E1A06B02900442411 /* Source.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
