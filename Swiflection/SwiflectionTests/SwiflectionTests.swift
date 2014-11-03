@@ -9,8 +9,10 @@
 import XCTest
 #if os(OSX)
 import Swiflection_OSX
+  let sampleLibrary = "Swiflection_Sample_OSX.framework"
 #elseif os(iOS)
 import Swiflection_IOS
+  let sampleLibrary = "Swiflection_Sample_IOS.framework"
 #endif
 
 class SwiflectionTests: XCTestCase {
@@ -48,9 +50,10 @@ class SwiflectionTests: XCTestCase {
       return [bundle.nsBundle.bundlePath.stringByDeletingLastPathComponent]
     }.map{
       (directory) -> [Bundle] in
-      let bundlePath = directory.stringByAppendingPathComponent("Swiflection_Sample_OSX.framework")
-      if let bundle = Bundle(path: bundlePath) {
-        return [bundle]
+      let bundlePath = directory.stringByAppendingPathComponent(sampleLibrary)
+      let bundle = Bundle(path: bundlePath)
+      if bundle != nil {
+        return [bundle!]
       } else {
         return []
       }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7B118ED01A03B46900F0647A /* Swiflection-Sample.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B118ECF1A03B46900F0647A /* Swiflection-Sample.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B118F101A03B51900F0647A /* Swiflection-Sample.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B118ECF1A03B46900F0647A /* Swiflection-Sample.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B4A55F21A07100800DA834D /* SampleClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A55F11A07100800DA834D /* SampleClass.swift */; };
+		7B4A55F31A07100800DA834D /* SampleClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A55F11A07100800DA834D /* SampleClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +19,7 @@
 		7B118ECF1A03B46900F0647A /* Swiflection-Sample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Swiflection-Sample.h"; path = "Swiflection-Sample/Swiflection-Sample.h"; sourceTree = "<group>"; };
 		7B118EF41A03B4BB00F0647A /* Swiflection_Sample_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiflection_Sample_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B118EF71A03B4BB00F0647A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B4A55F11A07100800DA834D /* SampleClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SampleClass.swift; path = "Swiflection-Sample/SampleClass.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				7B118ECF1A03B46900F0647A /* Swiflection-Sample.h */,
+				7B4A55F11A07100800DA834D /* SampleClass.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -229,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B4A55F21A07100800DA834D /* SampleClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B4A55F31A07100800DA834D /* SampleClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +332,7 @@
 		7B118EE11A03B46900F0647A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -337,12 +344,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		7B118EE21A03B46900F0647A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -360,6 +369,7 @@
 		7B118F081A03B4BB00F0647A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -376,6 +386,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -383,6 +394,7 @@
 		7B118F091A03B4BB00F0647A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -419,6 +431,7 @@
 				7B118EE21A03B46900F0647A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B118F071A03B4BB00F0647A /* Build configuration list for PBXNativeTarget "Swiflection_Sample_IOS" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +440,7 @@
 				7B118F091A03B4BB00F0647A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

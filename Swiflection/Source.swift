@@ -116,6 +116,7 @@ public class Bundle {
     if nsBundle == nil {
       return nil
     }
+    nsBundle!.load()
     self.nsBundle = nsBundle!
   }
 }

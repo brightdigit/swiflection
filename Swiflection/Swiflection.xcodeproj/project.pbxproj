@@ -51,6 +51,13 @@
 			remoteGlobalIDString = 7B118EC91A03B46900F0647A;
 			remoteInfo = Swiflection_Sample_OSX;
 		};
+		7B4A55ED1A07096A00DA834D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B118EE61A03B46900F0647A /* Swiflection-Sample.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B118EF31A03B4BB00F0647A;
+			remoteInfo = Swiflection_Sample_IOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -338,6 +345,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7B4A55EE1A07096A00DA834D /* PBXTargetDependency */,
 				7B118EAF1A03B22300F0647A /* PBXTargetDependency */,
 			);
 			name = Swiflection_IOSTests;
@@ -492,6 +500,11 @@
 			isa = PBXTargetDependency;
 			name = Swiflection_Sample_OSX;
 			targetProxy = 7B118F491A03D19B00F0647A /* PBXContainerItemProxy */;
+		};
+		7B4A55EE1A07096A00DA834D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Swiflection_Sample_IOS;
+			targetProxy = 7B4A55ED1A07096A00DA834D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
