@@ -59,9 +59,15 @@ class SwiflectionTests: XCTestCase {
     }.map{
       (bundle) -> [SLClass] in
       return bundle.classes
-    }.map {
+    }.filter {
+      (cls) -> Bool in
+      return cls.adoptsProtocol(name: "Swiflection_Sample_IOS.SampleProtocolA")
+    }.map{
       (cls) -> [SLProtocol] in
       return cls.protocols
+    }.map{
+      (ptl) -> [String] in
+      return [ptl.name]
     }
     
     query.execute{

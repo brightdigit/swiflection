@@ -119,6 +119,14 @@ public class SLBundle {
 
 public class SLProtocol {
   public let objc_Protocol:Protocol
+  private var _name:String?
+
+  public var name:String {
+    if _name == nil {
+      _name = SLProtocol.getName(objc_Protocol:objc_Protocol)
+    }
+    return _name!
+  }
 
   public init (objc_Protocol:Protocol) {
     self.objc_Protocol = objc_Protocol
@@ -135,6 +143,11 @@ public class SLProtocol {
       (objc_Protocol) -> SLProtocol in
       return SLProtocol(objc_Protocol:objc_Protocol)
     }
+  }
+
+  public class func getName (#objc_Protocol:Protocol) -> String {
+    let cName = protocol_getName(objc_Protocol)
+    return String.fromCString(cName)!
   }
 }
 
@@ -166,16 +179,37 @@ public class SLClass {
       var current = classNames.advancedBy(pointerIndex)
       var objc_Class: AnyClass! = objc_lookUpClass(current.memory)
       classes.append(SLClass(objc_Class: objc_Class))
-      //      current.memory
-      //var name = String.fromCString(current.memory)
-      //objc_look
-      //println(name)
     }
     
     return classes
   }
 
+  public func adoptsProtocol(#name: String) -> Bool {
+    return self.protocols.some{
+      (ptcl) -> Bool in
+      return ptcl.name == name
+    }
+  }
+}
 
+extension Array {
+  func every(closure: (T) -> Bool) -> Bool {
+    for item in self {
+      if !closure(item) {
+        return false
+      }
+    }
+    return true
+  }
+  
+  func some(closure: (T) -> Bool) -> Bool {
+    for item in self {
+      if closure(item) {
+        return true
+      }
+    }
+    return false
+  }
 }
 
 public class ArumpIterator<T> {
