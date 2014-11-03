@@ -89,22 +89,17 @@ public class AsyncMapSource<T,U> : Source<U> {
   }
 }
 */
-public class Bundle {
+public class SLBundle {
   public let nsBundle:NSBundle!
+  private var _classes:[SLClass]?
 
-  public var classes:[Class] {
-    var count:UInt32 = 0
-    var imageName = self.nsBundle.executablePath!.cStringUsingEncoding(NSUTF8StringEncoding)
-    var classNames = objc_copyClassNamesForImage(imageName!, &count)
-    for index in 0...count {
-      var pointerIndex = Int(index)
-      var current = classNames.advancedBy(pointerIndex)
-      //      current.memory
-      var name = String.fromCString(current.memory)
-      println(name)
+  public var classes:[SLClass] {
+    get {
+      if _classes == nil {
+        _classes = SLClass.classes(fromBundle: self)
+      }
+      return _classes!
     }
-
-    return []
   }
 
   public init (nsBundle: NSBundle) {
@@ -119,19 +114,123 @@ public class Bundle {
     nsBundle!.load()
     self.nsBundle = nsBundle!
   }
+  
 }
 
-public class Class {
+public class SLProtocol {
+  public let objc_Protocol:Protocol
+
+  public init (objc_Protocol:Protocol) {
+    self.objc_Protocol = objc_Protocol
+  }
+  
+  public class func protocols (fromClass cls:SLClass) -> [SLProtocol] {
+    var ucount:UInt32 = 0
+//    class_copyProtocolList(cls.objc_Class, &ucount)
+    class_copyMethodList(cls.objc_Class, &ucount)
+    
+    var objc_Protocols_iterator = ArumpIterator(parameter: cls.objc_Class, method: class_copyProtocolList)
+    //ArumpIterator(class_copyProtocolList, cls.objc_Class)// = class_copyProtocolList(cls.objc_Class, &ucount)
+    return objc_Protocols_iterator.map{
+      (objc_Protocol) -> SLProtocol in
+      return SLProtocol(objc_Protocol:objc_Protocol)
+    }
+  }
+}
+
+public class SLClass {
+  public let objc_Class:AnyClass
+  public var _protocols:[SLProtocol]?
+
+  public var protocols:[SLProtocol] {
+    get {
+      if _protocols == nil {
+        _protocols = SLProtocol.protocols(fromClass: self)
+      }
+      return _protocols!
+    }
+  }
+  
+  public init (objc_Class : AnyClass) {
+    self.objc_Class = objc_Class
+  }
+  
+  public class func classes (fromBundle bundle:SLBundle) -> [SLClass] {
+    var ucount:UInt32 = 0
+    let imageName = bundle.nsBundle.executablePath!.cStringUsingEncoding(NSUTF8StringEncoding)
+    let classNames = objc_copyClassNamesForImage(imageName!, &ucount)
+    var classes = [SLClass]()
+    let count = Int(ucount)
+    //for index in 0...count {
+    for var pointerIndex = 0; pointerIndex < count; pointerIndex++ {
+      var current = classNames.advancedBy(pointerIndex)
+      var objc_Class: AnyClass! = objc_lookUpClass(current.memory)
+      classes.append(SLClass(objc_Class: objc_Class))
+      //      current.memory
+      //var name = String.fromCString(current.memory)
+      //objc_look
+      //println(name)
+    }
+    
+    return classes
+  }
+
 
 }
 
-public struct From {
+public class ArumpIterator<T> {
+  private let pointer:AutoreleasingUnsafeMutablePointer<T?>
+  private let ucount:UInt32
+  
+  public init (pointer: AutoreleasingUnsafeMutablePointer<T?>, count: UInt32) {
+    self.pointer = pointer
+    self.ucount = count
+  }
+  
+  public init<U>(parameter: U, method: (U, UnsafeMutablePointer<UInt32>) -> AutoreleasingUnsafeMutablePointer<T?>) {
+    var ucount:UInt32 = 0
+    self.pointer = method(parameter, &ucount)
+    self.ucount = ucount
+  }
 
-  public static var allBundles = ClosureSource(closure: NSBundle.allBundles).map{
-    (object: AnyObject) -> [Bundle] in
-    let nsBundle = object as NSBundle
-    let bundle = Bundle(nsBundle: nsBundle)
-    return [bundle]
+  public func map<W>(closure: (T) -> W) -> [W] {
+    let count = Int(ucount)
+    var result:[W] = []
+    for var index = 0; index < count; index++ {
+      if let item = self.pointer[index] {
+        result.append(closure(item))
+      }
+    }
+//    var current = self.pointer as Protocol?
+    return result
+    /*
+    for var pointerIndex = 0; pointerIndex < count; pointerIndex++ {
+      
+      if let item = current.memory {
+        result.append(closure(item))
+      }
+      //var objc_Class: AnyClass! = objc_lookUpClass(current.memory)
+      //classes.append(SLClass(objc_Class: objc_Class))
+      //      current.memory
+      //var name = String.fromCString(current.memory)
+      //objc_look
+      //println(name)
+    }
+    return result
+*/
+  }
+}
+
+public struct SLQuery {
+  
+  public struct from {
+    
+    public static var allBundles = ClosureSource(closure: NSBundle.allBundles).map{
+      (object: AnyObject) -> [SLBundle] in
+      let nsBundle = object as NSBundle
+      let bundle = SLBundle(nsBundle: nsBundle)
+      return [bundle]
+    }
   }
 }
 

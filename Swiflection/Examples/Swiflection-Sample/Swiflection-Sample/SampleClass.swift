@@ -6,6 +6,20 @@
 //  Copyright (c) 2014 BrightDigit, LLC. All rights reserved.
 //
 
-public class SampleClass {
+@objc public protocol SampleProtocolA {
+  func testA ()
+}
 
+@objc public protocol SampleProtocolB {
+  func testB ()
+  
+}
+
+public class SampleClass:  SampleProtocolA, SampleProtocolB{
+  public func testA() {
+
+  }
+  public func testB() {
+
+  }
 }
