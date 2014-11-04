@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B0532801A0863DB00830209 /* MethodImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B05327F1A0863DB00830209 /* MethodImp.m */; };
+		7B0532811A0863E200830209 /* MethodImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B05327F1A0863DB00830209 /* MethodImp.m */; };
+		7B0532831A086ABE00830209 /* Swiflection.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B0532821A086A9E00830209 /* Swiflection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B0532841A086ABF00830209 /* Swiflection.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B0532821A086A9E00830209 /* Swiflection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B118E941A03B1B000F0647A /* SwiflectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118E931A03B1B000F0647A /* SwiflectionTests.swift */; };
 		7B118EAD1A03B22300F0647A /* Swiflection_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B118EA21A03B22300F0647A /* Swiflection_IOS.framework */; };
 		7B118F171A03B61500F0647A /* Swiflection_Sample_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B118EEC1A03B46A00F0647A /* Swiflection_Sample_OSX.framework */; };
@@ -61,6 +65,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B05327F1A0863DB00830209 /* MethodImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MethodImp.m; path = Swiflection/MethodImp.m; sourceTree = "<group>"; };
+		7B0532821A086A9E00830209 /* Swiflection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Swiflection.h; sourceTree = "<group>"; };
 		7B118E811A03B1B000F0647A /* Swiflection_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiflection_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B118E851A03B1B000F0647A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B118E8C1A03B1B000F0647A /* SwiflectionTests_OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiflectionTests_OSX.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,6 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				7BC6413C1A06B02900442411 /* Source.swift */,
+				7B05327F1A0863DB00830209 /* MethodImp.m */,
+				7B0532821A086A9E00830209 /* Swiflection.h */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -266,6 +274,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B0532841A086ABF00830209 /* Swiflection.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +282,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B0532831A086ABE00830209 /* Swiflection.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +380,7 @@
 					};
 					7B118EA11A03B22300F0647A = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = MLT7M394S7;
 					};
 					7B118EAB1A03B22300F0647A = {
 						CreatedOnToolsVersion = 6.1;
@@ -456,6 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BC6413D1A06B02900442411 /* Source.swift in Sources */,
+				7B0532801A0863DB00830209 /* MethodImp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BC6413E1A06B02900442411 /* Source.swift in Sources */,
+				7B0532811A0863E200830209 /* MethodImp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,6 +676,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -674,7 +688,7 @@
 				);
 				INFOPLIST_FILE = Swiflection_IOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -688,6 +702,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -695,7 +710,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Swiflection_IOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -708,6 +723,7 @@
 		7B118EB91A03B22300F0647A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -727,6 +743,7 @@
 		7B118EBA1A03B22300F0647A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

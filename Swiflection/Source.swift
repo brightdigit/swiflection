@@ -26,14 +26,14 @@ public class Source<T> {
     return AsyncMapSource(source: self, map: closure)
   }
   */
-  public func executeSync(error: NSErrorPointer) -> [T] {
+  public func executeSync(#error: NSErrorPointer) -> [T] {
     return []
   }
   
   public func execute(closure: ([T], NSError?) -> Void) {
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
       var error:NSError?
-      var result = self.executeSync(&error)
+      var result = self.executeSync(error: &error)
       closure(result, error)
     })
   }
@@ -46,7 +46,7 @@ public class ClosureSource<T> : Source<T> {
     self.closure = closure
   }
 
-  public override func executeSync(error: NSErrorPointer) -> [T] {
+  public override func executeSync(#error: NSErrorPointer) -> [T] {
     return closure()
   }
 }
@@ -60,8 +60,8 @@ public class FilteredSource<T> : Source<T> {
     self.filter = filter
   }
   
-  public override func executeSync(error: NSErrorPointer) -> [T] {
-    return source.executeSync(error).filter(self.filter)
+  public override func executeSync(#error: NSErrorPointer) -> [T] {
+    return source.executeSync(error: error).filter(self.filter)
   }
 }
 
@@ -74,8 +74,8 @@ public class MapSource<T,U> : Source<U> {
     self.map = map
   }
   
-  public override func executeSync(error: NSErrorPointer) -> [U] {
-    return source.executeSync(error).map(self.map).reduce([]) {$0 + $1}
+  public override func executeSync(#error: NSErrorPointer) -> [U] {
+    return source.executeSync(error: error).map(self.map).reduce([]) {$0 + $1}
   }
 }
 /*
@@ -133,28 +133,37 @@ public class SLProtocol {
   }
   
   public class func protocols (fromClass cls:SLClass) -> [SLProtocol] {
-    var ucount:UInt32 = 0
-//    class_copyProtocolList(cls.objc_Class, &ucount)
-    class_copyMethodList(cls.objc_Class, &ucount)
-    
-    var objc_Protocols_iterator = ArumpIterator(parameter: cls.objc_Class, method: class_copyProtocolList)
-    //ArumpIterator(class_copyProtocolList, cls.objc_Class)// = class_copyProtocolList(cls.objc_Class, &ucount)
-    return objc_Protocols_iterator.map{
-      (objc_Protocol) -> SLProtocol in
-      return SLProtocol(objc_Protocol:objc_Protocol)
-    }
+    return ArumpIterator(parameter: cls.objc_Class, method: class_copyProtocolList).map(SLProtocol.from)
   }
-
+  
+  public class func from(#objc_Protocol: Protocol) -> SLProtocol {
+    return SLProtocol(objc_Protocol: objc_Protocol)
+  }
+  
   public class func getName (#objc_Protocol:Protocol) -> String {
     let cName = protocol_getName(objc_Protocol)
     return String.fromCString(cName)!
   }
 }
 
-public class SLClass {
+public class SLClass : Printable {
   public let objc_Class:AnyClass
   public var _protocols:[SLProtocol]?
 
+  public var name:String {
+    return NSStringFromClass(self.objc_Class)
+  }
+  
+  public var description : String {
+    return self.name
+  }
+  
+  public func factory<T>() -> ()->T? {
+    return {
+      return nil
+    }
+  }
+  
   public var protocols:[SLProtocol] {
     get {
       if _protocols == nil {
@@ -168,20 +177,28 @@ public class SLClass {
     self.objc_Class = objc_Class
   }
   
+  public class func from(#objc_Class: AnyClass) -> SLClass {
+    return SLClass(objc_Class: objc_Class)
+  }
+  
   public class func classes (fromBundle bundle:SLBundle) -> [SLClass] {
     var ucount:UInt32 = 0
-    let imageName = bundle.nsBundle.executablePath!.cStringUsingEncoding(NSUTF8StringEncoding)
-    let classNames = objc_copyClassNamesForImage(imageName!, &ucount)
-    var classes = [SLClass]()
-    let count = Int(ucount)
-    //for index in 0...count {
-    for var pointerIndex = 0; pointerIndex < count; pointerIndex++ {
-      var current = classNames.advancedBy(pointerIndex)
-      var objc_Class: AnyClass! = objc_lookUpClass(current.memory)
-      classes.append(SLClass(objc_Class: objc_Class))
+    let imageName = bundle.nsBundle.executablePath!.cStringUsingEncoding(NSUTF8StringEncoding)!
+#if true
+    let classNames = objc_copyClassNamesForImage(imageName, &ucount)
+    let classIterator = UmpIterator(pointer: classNames, count: ucount)
+#else
+    let classIterator = UmpIterator(parameter: imageName, method: objc_copyClassNamesForImage)
+#endif
+    return classIterator.map{
+      (pointer) -> SLClass in
+      var cls:AnyClass! = objc_lookUpClass(pointer)
+      return SLClass(objc_Class: cls)
     }
-    
-    return classes
+  }
+  
+  public class var allClasses:[SLClass] {
+    return ArumpIterator(method: objc_copyClassList).map(SLClass.from)
   }
 
   public func adoptsProtocol(#name: String) -> Bool {
@@ -212,6 +229,37 @@ extension Array {
   }
 }
 
+public class UmpIterator<T> {
+  private let pointer:UnsafeMutablePointer<T>
+  private let ucount:UInt32
+  
+  public init (pointer: UnsafeMutablePointer<T>, count: UInt32) {
+    self.pointer = pointer
+    self.ucount = count
+  }
+  
+  public convenience init<U>(parameter: U, method: (U, UnsafeMutablePointer<UInt32>) -> UnsafeMutablePointer<T>) {
+    var ucount:UInt32 = 0
+    var pointer = method(parameter, &ucount)
+    self.init(pointer: pointer, count: ucount)
+  }
+  
+  public convenience init (method: (UnsafeMutablePointer<UInt32>) -> UnsafeMutablePointer<T>) {
+    var ucount:UInt32 = 0
+    var pointer = method(&ucount)
+    self.init(pointer: pointer, count: ucount)
+  }
+  
+  public func map<W>(closure: (T) -> W) -> [W] {
+    let count = Int(ucount)
+    var result:[W] = []
+    for var index = 0; index < count; index++ {
+      result.append(closure(pointer[index]))
+    }
+    return result
+  }
+}
+
 public class ArumpIterator<T> {
   private let pointer:AutoreleasingUnsafeMutablePointer<T?>
   private let ucount:UInt32
@@ -221,10 +269,16 @@ public class ArumpIterator<T> {
     self.ucount = count
   }
   
-  public init<U>(parameter: U, method: (U, UnsafeMutablePointer<UInt32>) -> AutoreleasingUnsafeMutablePointer<T?>) {
+  public convenience init<U>(parameter: U, method: (U, UnsafeMutablePointer<UInt32>) -> AutoreleasingUnsafeMutablePointer<T?>) {
     var ucount:UInt32 = 0
-    self.pointer = method(parameter, &ucount)
-    self.ucount = ucount
+    var pointer = method(parameter, &ucount)
+    self.init(pointer: pointer, count: ucount)
+  }
+  
+  public convenience init (method: (UnsafeMutablePointer<UInt32>) -> AutoreleasingUnsafeMutablePointer<T?>) {
+    var ucount:UInt32 = 0
+    var pointer = method(&ucount)
+    self.init(pointer: pointer, count: ucount)
   }
 
   public func map<W>(closure: (T) -> W) -> [W] {
@@ -235,23 +289,7 @@ public class ArumpIterator<T> {
         result.append(closure(item))
       }
     }
-//    var current = self.pointer as Protocol?
     return result
-    /*
-    for var pointerIndex = 0; pointerIndex < count; pointerIndex++ {
-      
-      if let item = current.memory {
-        result.append(closure(item))
-      }
-      //var objc_Class: AnyClass! = objc_lookUpClass(current.memory)
-      //classes.append(SLClass(objc_Class: objc_Class))
-      //      current.memory
-      //var name = String.fromCString(current.memory)
-      //objc_look
-      //println(name)
-    }
-    return result
-*/
   }
 }
 
@@ -265,6 +303,8 @@ public struct SLQuery {
       let bundle = SLBundle(nsBundle: nsBundle)
       return [bundle]
     }
+    
+    public static var allClasses = ClosureSource{SLClass.allClasses}
   }
 }
 
