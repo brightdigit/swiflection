@@ -13,6 +13,7 @@ import Swiflection_OSX
 #elseif os(iOS)
 import Swiflection_IOS
   let sampleLibrary = "Swiflection_Sample_IOS.framework"
+  import Swiflection_Sample_IOS
 #endif
 
 class SwiflectionTests: XCTestCase {
@@ -37,6 +38,26 @@ class SwiflectionTests: XCTestCase {
     self.measureBlock() {
       // Put the code you want to measure the time of here.
     }
+  }
+  
+  func testMethod() {
+    var error: NSErrorPointer = nil
+    
+    var methods = SLQuery.from.allClasses.filter{
+      (slc) -> Bool in
+      return slc.name == "Swiflection_Sample_IOS.SampleClass"
+    }.map{
+      (slc) -> [SLMethod] in
+      var sel = Selector("init")
+      if let method = slc.method(sel) {
+        return [method]
+      } else {
+        return []
+      }
+    }.executeSync(error: error)
+    
+    var obj = methods[0].closure()([]) as? SampleClass
+    XCTAssert(obj != nil, "not returning valid object")
   }
   
   func testLoadLibrary() {

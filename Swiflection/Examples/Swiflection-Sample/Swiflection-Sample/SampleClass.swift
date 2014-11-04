@@ -22,4 +22,7 @@ public class SampleClass:  SampleProtocolA, SampleProtocolB{
   public func testB() {
 
   }
+  @objc public init () {
+    
+  }
 }

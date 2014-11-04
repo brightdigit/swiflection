@@ -146,9 +146,61 @@ public class SLProtocol {
   }
 }
 
+public class SLMethod {
+  public let objc_Method:Method
+  private let slClass:SLClass
+  
+  public var selector:Selector {
+    return self._lazySelector.value
+  }
+  
+  private let _lazySelector:Lazy<Selector>
+  
+  public init (objc_Method: Method, slClass: SLClass) {
+    self._lazySelector = Lazy{
+      () -> Selector in
+      return method_getName(objc_Method)
+    }
+    self.slClass = slClass
+    self.objc_Method = objc_Method
+  }
+  
+  public class func methods (fromClass slClass:SLClass) -> [SLMethod] {
+    var methodIterator = UmpIterator(parameter: slClass.objc_Class, method: class_copyMethodList)
+    return methodIterator.map{
+      (objc_Method) -> SLMethod in
+      return SLMethod(objc_Method:objc_Method, slClass: slClass)
+    }
+  }
+  
+  public func closure () -> ([AnyObject]) -> AnyObject! {
+    var imp = method_getImplementation(self.objc_Method)
+    
+    return MethodImp.closureFromImplementation(imp, fromClass: self.slClass.objc_Class, withSelector: self.selector)
+  }
+}
+
+public class Lazy<T> {
+  private var _factory: () -> T
+  private var _value:T?
+  
+  public init (factory : () -> T) {
+    self._factory = factory
+  }
+  
+  public var value:T {
+    if self._value == nil {
+      self._value = self._factory()
+    }
+    
+    return _value!
+  }
+}
+
 public class SLClass : Printable {
   public let objc_Class:AnyClass
-  public var _protocols:[SLProtocol]?
+  private var _protocols:[SLProtocol]?
+  private let _methods:Lazy<[SLMethod]>!
 
   public var name:String {
     return NSStringFromClass(self.objc_Class)
@@ -160,8 +212,13 @@ public class SLClass : Printable {
   
   public func factory<T>() -> ()->T? {
     return {
+      //closureFromImplementation(<#implementation: Int32#>)
       return nil
     }
+  }
+  
+  public var methods:[SLMethod] {
+    return _methods.value
   }
   
   public var protocols:[SLProtocol] {
@@ -173,8 +230,23 @@ public class SLClass : Printable {
     }
   }
   
+  public func method (selector: Selector) -> SLMethod? {
+    for method in self.methods {
+      if (method.selector == selector) {
+        return method
+      }
+    }
+    return nil
+  }
+  
   public init (objc_Class : AnyClass) {
     self.objc_Class = objc_Class
+    self._methods = Lazy{
+      UmpIterator(parameter: objc_Class, method: class_copyMethodList).map{
+        (objc_Method) -> SLMethod in
+        return SLMethod(objc_Method: objc_Method, slClass: self)
+      }
+    }
   }
   
   public class func from(#objc_Class: AnyClass) -> SLClass {
@@ -257,6 +329,10 @@ public class UmpIterator<T> {
       result.append(closure(pointer[index]))
     }
     return result
+  }
+  
+  deinit {
+    free(self.pointer)
   }
 }
 

@@ -2,16 +2,17 @@
 //  MethodImp.m
 //  Swiflection
 //
-//  Created by Leo G Dion on 11/3/14.
+//  Created by Leo G Dion on 11/4/14.
 //  Copyright (c) 2014 BrightDigit, LLC. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "Swiflection.h"
+#import "MethodImp.h"
 
-static factory closureFromImplementation (IMP implementation) {
-  id (*factoryImp)() = (void *) implementation;
-  return ^{
-    return factoryImp();
+@implementation MethodImp
++ (factory) closureFromImplementation: (IMP) implementation fromClass:(id)cls withSelector: (SEL) selector {
+  id (*factoryImp)(id, SEL, id,...) = (void *) implementation;
+  return ^(NSArray * parameters){
+    return factoryImp([cls alloc], selector, parameters);
   };
 }
+@end
