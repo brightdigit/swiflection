@@ -16,8 +16,34 @@
 		7B99C5D81A0976C6006267E2 /* Swiflection_Sample_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B118F141A03B61500F0647A /* Swiflection_Sample_IOS.framework */; };
 		7B99C5E11A09B31C006267E2 /* Swiflection-Bridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B99C5E01A09B31C006267E2 /* Swiflection-Bridge.h */; };
 		7B99C5E21A09B31C006267E2 /* Swiflection-Bridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B99C5E01A09B31C006267E2 /* Swiflection-Bridge.h */; };
-		7BC6413D1A06B02900442411 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6413C1A06B02900442411 /* Source.swift */; };
-		7BC6413E1A06B02900442411 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6413C1A06B02900442411 /* Source.swift */; };
+		7B99C5F41A09B50B006267E2 /* SLBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5E41A09B50B006267E2 /* SLBundle.swift */; };
+		7B99C5F51A09B50B006267E2 /* SLBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5E41A09B50B006267E2 /* SLBundle.swift */; };
+		7B99C5F61A09B50B006267E2 /* SLClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5E51A09B50B006267E2 /* SLClass.swift */; };
+		7B99C5F71A09B50B006267E2 /* SLClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5E51A09B50B006267E2 /* SLClass.swift */; };
+		7B99C5F81A09B50B006267E2 /* SLMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5E61A09B50B006267E2 /* SLMethod.swift */; };
+		7B99C5F91A09B50B006267E2 /* SLMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5E61A09B50B006267E2 /* SLMethod.swift */; };
+		7B99C5FA1A09B50B006267E2 /* SLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5E71A09B50B006267E2 /* SLProtocol.swift */; };
+		7B99C5FB1A09B50B006267E2 /* SLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5E71A09B50B006267E2 /* SLProtocol.swift */; };
+		7B99C5FC1A09B50B006267E2 /* SLQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5E81A09B50B006267E2 /* SLQuery.swift */; };
+		7B99C5FD1A09B50B006267E2 /* SLQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5E81A09B50B006267E2 /* SLQuery.swift */; };
+		7B99C5FE1A09B50B006267E2 /* ArumpIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5EA1A09B50B006267E2 /* ArumpIterator.swift */; };
+		7B99C5FF1A09B50B006267E2 /* ArumpIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5EA1A09B50B006267E2 /* ArumpIterator.swift */; };
+		7B99C6001A09B50B006267E2 /* UmpIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5EB1A09B50B006267E2 /* UmpIterator.swift */; };
+		7B99C6011A09B50B006267E2 /* UmpIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5EB1A09B50B006267E2 /* UmpIterator.swift */; };
+		7B99C6021A09B50B006267E2 /* AsyncMapSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5ED1A09B50B006267E2 /* AsyncMapSource.swift */; };
+		7B99C6031A09B50B006267E2 /* AsyncMapSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5ED1A09B50B006267E2 /* AsyncMapSource.swift */; };
+		7B99C6041A09B50B006267E2 /* ClosureSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5EE1A09B50B006267E2 /* ClosureSource.swift */; };
+		7B99C6051A09B50B006267E2 /* ClosureSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5EE1A09B50B006267E2 /* ClosureSource.swift */; };
+		7B99C6061A09B50B006267E2 /* FilteredSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5EF1A09B50B006267E2 /* FilteredSource.swift */; };
+		7B99C6071A09B50B006267E2 /* FilteredSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5EF1A09B50B006267E2 /* FilteredSource.swift */; };
+		7B99C6081A09B50B006267E2 /* MapSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5F01A09B50B006267E2 /* MapSource.swift */; };
+		7B99C6091A09B50B006267E2 /* MapSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5F01A09B50B006267E2 /* MapSource.swift */; };
+		7B99C60A1A09B50B006267E2 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5F11A09B50B006267E2 /* Source.swift */; };
+		7B99C60B1A09B50B006267E2 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5F11A09B50B006267E2 /* Source.swift */; };
+		7B99C60C1A09B50B006267E2 /* Array.Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5F21A09B50B006267E2 /* Array.Test.swift */; };
+		7B99C60D1A09B50B006267E2 /* Array.Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5F21A09B50B006267E2 /* Array.Test.swift */; };
+		7B99C60E1A09B50B006267E2 /* Lazy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5F31A09B50B006267E2 /* Lazy.swift */; };
+		7B99C60F1A09B50B006267E2 /* Lazy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5F31A09B50B006267E2 /* Lazy.swift */; };
 		7BE8E1B31A090D930088AF10 /* MethodImp.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BE8E1B11A090D930088AF10 /* MethodImp.h */; };
 		7BE8E1B41A090D930088AF10 /* MethodImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8E1B21A090D930088AF10 /* MethodImp.m */; };
 /* End PBXBuildFile section */
@@ -79,7 +105,20 @@
 		7B118EB21A03B22300F0647A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B118EE61A03B46900F0647A /* Swiflection-Sample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Swiflection-Sample.xcodeproj"; path = "Examples/Swiflection-Sample/Swiflection-Sample.xcodeproj"; sourceTree = "<group>"; };
 		7B99C5E01A09B31C006267E2 /* Swiflection-Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Swiflection-Bridge.h"; path = "Swiflection/Swiflection-Bridge.h"; sourceTree = "<group>"; };
-		7BC6413C1A06B02900442411 /* Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
+		7B99C5E41A09B50B006267E2 /* SLBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLBundle.swift; sourceTree = "<group>"; };
+		7B99C5E51A09B50B006267E2 /* SLClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLClass.swift; sourceTree = "<group>"; };
+		7B99C5E61A09B50B006267E2 /* SLMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLMethod.swift; sourceTree = "<group>"; };
+		7B99C5E71A09B50B006267E2 /* SLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLProtocol.swift; sourceTree = "<group>"; };
+		7B99C5E81A09B50B006267E2 /* SLQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLQuery.swift; sourceTree = "<group>"; };
+		7B99C5EA1A09B50B006267E2 /* ArumpIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArumpIterator.swift; sourceTree = "<group>"; };
+		7B99C5EB1A09B50B006267E2 /* UmpIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UmpIterator.swift; sourceTree = "<group>"; };
+		7B99C5ED1A09B50B006267E2 /* AsyncMapSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncMapSource.swift; sourceTree = "<group>"; };
+		7B99C5EE1A09B50B006267E2 /* ClosureSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureSource.swift; sourceTree = "<group>"; };
+		7B99C5EF1A09B50B006267E2 /* FilteredSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteredSource.swift; sourceTree = "<group>"; };
+		7B99C5F01A09B50B006267E2 /* MapSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapSource.swift; sourceTree = "<group>"; };
+		7B99C5F11A09B50B006267E2 /* Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
+		7B99C5F21A09B50B006267E2 /* Array.Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Array.Test.swift; path = Swiflection/Array.Test.swift; sourceTree = "<group>"; };
+		7B99C5F31A09B50B006267E2 /* Lazy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lazy.swift; path = Swiflection/Lazy.swift; sourceTree = "<group>"; };
 		7BE8E1B11A090D930088AF10 /* MethodImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MethodImp.h; path = Swiflection/MethodImp.h; sourceTree = "<group>"; };
 		7BE8E1B21A090D930088AF10 /* MethodImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MethodImp.m; path = Swiflection/MethodImp.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -257,8 +296,12 @@
 		7B118F181A03CB3700F0647A /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				7B99C5E31A09B50B006267E2 /* Reflection */,
+				7B99C5E91A09B50B006267E2 /* Pointers */,
+				7B99C5EC1A09B50B006267E2 /* Queries */,
+				7B99C5F21A09B50B006267E2 /* Array.Test.swift */,
+				7B99C5F31A09B50B006267E2 /* Lazy.swift */,
 				7B99C5E01A09B31C006267E2 /* Swiflection-Bridge.h */,
-				7BC6413C1A06B02900442411 /* Source.swift */,
 				7BE8E1B11A090D930088AF10 /* MethodImp.h */,
 				7BE8E1B21A090D930088AF10 /* MethodImp.m */,
 			);
@@ -271,6 +314,42 @@
 				7B118E911A03B1B000F0647A /* Supporting Files */,
 			);
 			name = Tests;
+			sourceTree = "<group>";
+		};
+		7B99C5E31A09B50B006267E2 /* Reflection */ = {
+			isa = PBXGroup;
+			children = (
+				7B99C5E41A09B50B006267E2 /* SLBundle.swift */,
+				7B99C5E51A09B50B006267E2 /* SLClass.swift */,
+				7B99C5E61A09B50B006267E2 /* SLMethod.swift */,
+				7B99C5E71A09B50B006267E2 /* SLProtocol.swift */,
+				7B99C5E81A09B50B006267E2 /* SLQuery.swift */,
+			);
+			name = Reflection;
+			path = Swiflection/Reflection;
+			sourceTree = "<group>";
+		};
+		7B99C5E91A09B50B006267E2 /* Pointers */ = {
+			isa = PBXGroup;
+			children = (
+				7B99C5EA1A09B50B006267E2 /* ArumpIterator.swift */,
+				7B99C5EB1A09B50B006267E2 /* UmpIterator.swift */,
+			);
+			name = Pointers;
+			path = Swiflection/Pointers;
+			sourceTree = "<group>";
+		};
+		7B99C5EC1A09B50B006267E2 /* Queries */ = {
+			isa = PBXGroup;
+			children = (
+				7B99C5ED1A09B50B006267E2 /* AsyncMapSource.swift */,
+				7B99C5EE1A09B50B006267E2 /* ClosureSource.swift */,
+				7B99C5EF1A09B50B006267E2 /* FilteredSource.swift */,
+				7B99C5F01A09B50B006267E2 /* MapSource.swift */,
+				7B99C5F11A09B50B006267E2 /* Source.swift */,
+			);
+			name = Queries;
+			path = Swiflection/Queries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -474,8 +553,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B99C5F41A09B50B006267E2 /* SLBundle.swift in Sources */,
+				7B99C5FC1A09B50B006267E2 /* SLQuery.swift in Sources */,
+				7B99C6041A09B50B006267E2 /* ClosureSource.swift in Sources */,
+				7B99C6081A09B50B006267E2 /* MapSource.swift in Sources */,
+				7B99C5F81A09B50B006267E2 /* SLMethod.swift in Sources */,
+				7B99C60E1A09B50B006267E2 /* Lazy.swift in Sources */,
+				7B99C5FA1A09B50B006267E2 /* SLProtocol.swift in Sources */,
+				7B99C6021A09B50B006267E2 /* AsyncMapSource.swift in Sources */,
+				7B99C5F61A09B50B006267E2 /* SLClass.swift in Sources */,
+				7B99C60C1A09B50B006267E2 /* Array.Test.swift in Sources */,
+				7B99C6061A09B50B006267E2 /* FilteredSource.swift in Sources */,
+				7B99C5FE1A09B50B006267E2 /* ArumpIterator.swift in Sources */,
+				7B99C60A1A09B50B006267E2 /* Source.swift in Sources */,
+				7B99C6001A09B50B006267E2 /* UmpIterator.swift in Sources */,
 				7BE8E1B41A090D930088AF10 /* MethodImp.m in Sources */,
-				7BC6413D1A06B02900442411 /* Source.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,7 +583,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BC6413E1A06B02900442411 /* Source.swift in Sources */,
+				7B99C5F51A09B50B006267E2 /* SLBundle.swift in Sources */,
+				7B99C5FD1A09B50B006267E2 /* SLQuery.swift in Sources */,
+				7B99C6051A09B50B006267E2 /* ClosureSource.swift in Sources */,
+				7B99C6091A09B50B006267E2 /* MapSource.swift in Sources */,
+				7B99C5F91A09B50B006267E2 /* SLMethod.swift in Sources */,
+				7B99C60F1A09B50B006267E2 /* Lazy.swift in Sources */,
+				7B99C5FB1A09B50B006267E2 /* SLProtocol.swift in Sources */,
+				7B99C6031A09B50B006267E2 /* AsyncMapSource.swift in Sources */,
+				7B99C5F71A09B50B006267E2 /* SLClass.swift in Sources */,
+				7B99C60D1A09B50B006267E2 /* Array.Test.swift in Sources */,
+				7B99C6071A09B50B006267E2 /* FilteredSource.swift in Sources */,
+				7B99C5FF1A09B50B006267E2 /* ArumpIterator.swift in Sources */,
+				7B99C60B1A09B50B006267E2 /* Source.swift in Sources */,
+				7B99C6011A09B50B006267E2 /* UmpIterator.swift in Sources */,
 				7B3C80B11A0922D400CD8967 /* MethodImp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -626,6 +731,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Swiflection/Swiflection-Bridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -645,6 +751,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Swiflection/Swiflection-Bridge.h";
 			};
 			name = Release;
 		};

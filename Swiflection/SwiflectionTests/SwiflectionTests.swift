@@ -9,12 +9,17 @@
 import XCTest
 #if os(OSX)
 import Swiflection_OSX
-  let sampleLibrary = "Swiflection_Sample_OSX.framework"
+  let samplePrefix = "Swiflection_Sample_OSX"
+  import Swiflection_Sample_OSX
 #elseif os(iOS)
-import Swiflection_IOS
-  let sampleLibrary = "Swiflection_Sample_IOS.framework"
+  import Swiflection_IOS
+  let samplePrefix = "Swiflection_Sample_IOS"
   import Swiflection_Sample_IOS
 #endif
+
+let sampleLibrary = "\(samplePrefix).framework"
+let sampleClass = "\(samplePrefix).SampleClass"
+let sampleProtocol = "\(samplePrefix).SampleProtocolA"
 
 class SwiflectionTests: XCTestCase {
   
@@ -45,7 +50,7 @@ class SwiflectionTests: XCTestCase {
     
     var methods = SLQuery.from.allClasses.filter{
       (slc) -> Bool in
-      return slc.name == "Swiflection_Sample_IOS.SampleClass"
+      return slc.name == sampleClass
     }.map{
       (slc) -> [SLMethod] in
       var sel = Selector("init")
@@ -82,7 +87,7 @@ class SwiflectionTests: XCTestCase {
       return bundle.classes
     }.filter {
       (cls) -> Bool in
-      return cls.adoptsProtocol(name: "Swiflection_Sample_IOS.SampleProtocolA")
+      return cls.adoptsProtocol(name: sampleProtocol)
     }.map{
       (cls) -> [SLProtocol] in
       return cls.protocols
