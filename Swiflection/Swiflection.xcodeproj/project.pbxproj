@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B0532831A086ABE00830209 /* Swiflection-Bridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B0532821A086A9E00830209 /* Swiflection-Bridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7B0532841A086ABF00830209 /* Swiflection-Bridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B0532821A086A9E00830209 /* Swiflection-Bridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B118E941A03B1B000F0647A /* SwiflectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118E931A03B1B000F0647A /* SwiflectionTests.swift */; };
 		7B118EAD1A03B22300F0647A /* Swiflection_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B118EA21A03B22300F0647A /* Swiflection_IOS.framework */; };
 		7B118F171A03B61500F0647A /* Swiflection_Sample_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B118EEC1A03B46A00F0647A /* Swiflection_Sample_OSX.framework */; };
@@ -16,6 +14,8 @@
 		7B3C80B11A0922D400CD8967 /* MethodImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8E1B21A090D930088AF10 /* MethodImp.m */; };
 		7B3C80C01A09255F00CD8967 /* MethodImp.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BE8E1B11A090D930088AF10 /* MethodImp.h */; };
 		7B99C5D81A0976C6006267E2 /* Swiflection_Sample_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B118F141A03B61500F0647A /* Swiflection_Sample_IOS.framework */; };
+		7B99C5E11A09B31C006267E2 /* Swiflection-Bridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B99C5E01A09B31C006267E2 /* Swiflection-Bridge.h */; };
+		7B99C5E21A09B31C006267E2 /* Swiflection-Bridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B99C5E01A09B31C006267E2 /* Swiflection-Bridge.h */; };
 		7BC6413D1A06B02900442411 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6413C1A06B02900442411 /* Source.swift */; };
 		7BC6413E1A06B02900442411 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6413C1A06B02900442411 /* Source.swift */; };
 		7BE8E1B31A090D930088AF10 /* MethodImp.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BE8E1B11A090D930088AF10 /* MethodImp.h */; };
@@ -68,7 +68,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7B0532821A086A9E00830209 /* Swiflection-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swiflection-Bridge.h"; sourceTree = "<group>"; };
 		7B118E811A03B1B000F0647A /* Swiflection_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiflection_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B118E851A03B1B000F0647A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B118E8C1A03B1B000F0647A /* SwiflectionTests_OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiflectionTests_OSX.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +78,7 @@
 		7B118EAC1A03B22300F0647A /* Swiflection_IOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swiflection_IOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B118EB21A03B22300F0647A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B118EE61A03B46900F0647A /* Swiflection-Sample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Swiflection-Sample.xcodeproj"; path = "Examples/Swiflection-Sample/Swiflection-Sample.xcodeproj"; sourceTree = "<group>"; };
+		7B99C5E01A09B31C006267E2 /* Swiflection-Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Swiflection-Bridge.h"; path = "Swiflection/Swiflection-Bridge.h"; sourceTree = "<group>"; };
 		7BC6413C1A06B02900442411 /* Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		7BE8E1B11A090D930088AF10 /* MethodImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MethodImp.h; path = Swiflection/MethodImp.h; sourceTree = "<group>"; };
 		7BE8E1B21A090D930088AF10 /* MethodImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MethodImp.m; path = Swiflection/MethodImp.m; sourceTree = "<group>"; };
@@ -257,8 +257,8 @@
 		7B118F181A03CB3700F0647A /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				7B99C5E01A09B31C006267E2 /* Swiflection-Bridge.h */,
 				7BC6413C1A06B02900442411 /* Source.swift */,
-				7B0532821A086A9E00830209 /* Swiflection-Bridge.h */,
 				7BE8E1B11A090D930088AF10 /* MethodImp.h */,
 				7BE8E1B21A090D930088AF10 /* MethodImp.m */,
 			);
@@ -281,7 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BE8E1B31A090D930088AF10 /* MethodImp.h in Headers */,
-				7B0532841A086ABF00830209 /* Swiflection-Bridge.h in Headers */,
+				7B99C5E11A09B31C006267E2 /* Swiflection-Bridge.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B3C80C01A09255F00CD8967 /* MethodImp.h in Headers */,
-				7B0532831A086ABE00830209 /* Swiflection-Bridge.h in Headers */,
+				7B99C5E21A09B31C006267E2 /* Swiflection-Bridge.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,7 +701,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Swiflection-Bridge.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swiflection/Swiflection-Bridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -724,7 +724,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Swiflection-Bridge.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swiflection/Swiflection-Bridge.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
