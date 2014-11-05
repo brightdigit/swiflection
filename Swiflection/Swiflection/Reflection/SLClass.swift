@@ -66,13 +66,8 @@ public class SLClass : Printable {
   
   public class func classes (fromBundle bundle:SLBundle) -> [SLClass] {
     var ucount:UInt32 = 0
-    let imageName = bundle.nsBundle.executablePath!.cStringUsingEncoding(NSUTF8StringEncoding)!
-    #if true
-      let classNames = objc_copyClassNamesForImage(imageName, &ucount)
-      let classIterator = UmpIterator(pointer: classNames, count: ucount)
-      #else
-      let classIterator = UmpIterator(parameter: imageName, method: objc_copyClassNamesForImage)
-    #endif
+    let imageName = class_getImageName(bundle.nsBundle.principalClass)
+    let classIterator = UmpIterator(parameter: imageName, method: objc_copyClassNamesForImage)
     return classIterator.map{
       (pointer) -> SLClass in
       var cls:AnyClass! = objc_lookUpClass(pointer)

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7B118E941A03B1B000F0647A /* SwiflectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118E931A03B1B000F0647A /* SwiflectionTests.swift */; };
 		7B118EAD1A03B22300F0647A /* Swiflection_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B118EA21A03B22300F0647A /* Swiflection_IOS.framework */; };
-		7B118F171A03B61500F0647A /* Swiflection_Sample_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B118EEC1A03B46A00F0647A /* Swiflection_Sample_OSX.framework */; };
 		7B118F1A1A03CB5B00F0647A /* SwiflectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118E931A03B1B000F0647A /* SwiflectionTests.swift */; };
 		7B3C80B11A0922D400CD8967 /* MethodImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8E1B21A090D930088AF10 /* MethodImp.m */; };
 		7B3C80C01A09255F00CD8967 /* MethodImp.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BE8E1B11A090D930088AF10 /* MethodImp.h */; };
@@ -44,6 +43,7 @@
 		7B99C60D1A09B50B006267E2 /* Array.Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5F21A09B50B006267E2 /* Array.Test.swift */; };
 		7B99C60E1A09B50B006267E2 /* Lazy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5F31A09B50B006267E2 /* Lazy.swift */; };
 		7B99C60F1A09B50B006267E2 /* Lazy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5F31A09B50B006267E2 /* Lazy.swift */; };
+		7B99C6121A09DDE9006267E2 /* Swiflection_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B118E811A03B1B000F0647A /* Swiflection_OSX.framework */; };
 		7BE8E1B31A090D930088AF10 /* MethodImp.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BE8E1B11A090D930088AF10 /* MethodImp.h */; };
 		7BE8E1B41A090D930088AF10 /* MethodImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8E1B21A090D930088AF10 /* MethodImp.m */; };
 /* End PBXBuildFile section */
@@ -135,7 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B118F171A03B61500F0647A /* Swiflection_Sample_OSX.framework in Frameworks */,
+				7B99C6121A09DDE9006267E2 /* Swiflection_OSX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
