@@ -1,0 +1,19 @@
+language: objective-c
+xcode_workspace: swiflection.xcworkspace
+osx_image: xcode61
+matrix:
+  include:
+    - xcode_scheme: Swiflection_IOS
+      xcode_sdk: iphone
+    - xcode_scheme: Swiflection_IOS
+      xcode_sdk: iphoneos8.1
+    - xcode_scheme: Swiflection_IOS
+      xcode_sdk: iphonesimulator8.0
+    - xcode_scheme: Swiflection_IOS
+      xcode_sdk: iphonesimulator8.1
+    - xcode_scheme: Swiflection_OSX
+      xcode_sdk: macosx
+    - xcode_scheme: Swiflection_OSX
+      xcode_sdk: macosx10.9
+    - xcode_scheme: Swiflection_OSX
+      xcode_sdk: macosx10.10
