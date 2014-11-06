@@ -21,13 +21,6 @@ public class SLClass : Printable {
     return self.name
   }
   
-  public func factory<T>() -> ()->T? {
-    return {
-      //closureFromImplementation(<#implementation: Int32#>)
-      return nil
-    }
-  }
-  
   public var methods:[SLMethod] {
     return _methods.value
   }
