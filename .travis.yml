@@ -1,3 +1,4 @@
 language: objective-c
 xcode_workspace: swiflection.xcworkspace
 xcode_scheme: [Swiflection_IOS, Swiflection_OSX]
+osx_image: xcode61
