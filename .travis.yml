@@ -4,15 +4,11 @@ osx_image: xcode61
 matrix:
   include:
     - xcode_scheme: Swiflection_IOS
-      xcode_sdk: iphonesimulator7.0
+      xcode_sdk: iphone
     - xcode_scheme: Swiflection_IOS
-      xcode_sdk: iphonesimulator7.1
+      xcode_sdk: iphoneos8.1
     - xcode_scheme: Swiflection_IOS
       xcode_sdk: iphonesimulator8.0
-    - xcode_scheme: Swiflection_IOS
-      xcode_sdk: iphone8.1
-    - xcode_scheme: Swiflection_IOS
-      xcode_sdk: iphone
     - xcode_scheme: Swiflection_IOS
       xcode_sdk: iphonesimulator8.1
     - xcode_scheme: Swiflection_OSX
