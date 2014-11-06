@@ -8,12 +8,8 @@ matrix:
     - xcode_scheme: Swiflection_IOS
       xcode_sdk: iphoneos8.1
     - xcode_scheme: Swiflection_IOS
-      xcode_sdk: iphonesimulator8.0
-    - xcode_scheme: Swiflection_IOS
       xcode_sdk: iphonesimulator8.1
     - xcode_scheme: Swiflection_OSX
       xcode_sdk: macosx
-    - xcode_scheme: Swiflection_OSX
-      xcode_sdk: macosx10.9
     - xcode_scheme: Swiflection_OSX
       xcode_sdk: macosx10.10
