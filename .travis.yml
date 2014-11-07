@@ -1,7 +1,7 @@
 language: objective-c
 xcode_workspace: swiflection.xcworkspace
 before_script:
-- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/profile/iOSTeam_Provisioning_Profile_combrightdigit.mobileprovision.enc -d -a -out account/profile/iOSTeam_Provisioning_Profile_combrightdigit.mobileprovision.enc
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/profile/iOSTeam_Provisioning_Profile_combrightdigit.mobileprovision.enc -d -a -out account/profile/iOSTeam_Provisioning_Profile_combrightdigit.mobileprovision
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/certs/dev.cer.enc -d -a -out account/certs/dev.cer
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/certs/dev.p12.enc -d -a -out account/certs/dev.p12
 - ./scripts/add_key.sh
