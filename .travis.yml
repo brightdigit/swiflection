@@ -1,5 +1,9 @@
 language: objective-c
 xcode_workspace: swiflection.xcworkspace
+before_script:
+- ./scripts/travis/add-key.sh
+after_script:
+- ./scripts/travis/remove-key.sh
 rvm: 2.1.4 
 osx_image: xcode61
   - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/profile/iOSTeam_Provisioning_Profile_combrightdigit.mobileprovision.enc-d -a -out account/profile/iOSTeam_Provisioning_Profile_combrightdigit.mobileprovision.enc
