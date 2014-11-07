@@ -6,20 +6,16 @@ osx_image: xcode61
   #- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/certs/dev.p12.enc -d -a -out account/certs/dev.p12
 matrix:
   include:
-  - xcode_scheme: Swiflection_IOS
-    xcode_sdk: iphone
-  - xcode_scheme: Swiflection_IOS
-    xcode_sdk: iphoneos8.1
-  - xcode_scheme: Swiflection_IOS
-    xcode_sdk: iphonesimulator8.0
-  - xcode_scheme: Swiflection_IOS
-    xcode_sdk: iphonesimulator8.1
-  - xcode_scheme: Swiflection_OSX
-    xcode_sdk: macosx
-  - xcode_scheme: Swiflection_OSX
-    xcode_sdk: macosx10.9
-  - xcode_scheme: Swiflection_OSX
-    xcode_sdk: macosx10.10
+    - xcode_scheme: Swiflection_IOS
+      xcode_sdk: iphoneos
+    - xcode_scheme: Swiflection_IOS
+      xcode_sdk: iphoneos8.1
+    - xcode_scheme: Swiflection_IOS
+      xcode_sdk: iphonesimulator8.1
+    - xcode_scheme: Swiflection_OSX
+      xcode_sdk: macosx
+    - xcode_scheme: Swiflection_OSX
+      xcode_sdk: macosx10.10
 env:
   global:  
   - 'DEVELOPER_NAME="iPhone Developer: Leo Dion (5VZ4KT69B9)"'
