@@ -27,3 +27,4 @@ DerivedData
 .ruby-version
 account/**/*.cer
 account/**/*.mobileprovision
+!account/**/apple.cer
