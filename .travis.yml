@@ -1,14 +1,5 @@
 language: objective-c
 xcode_workspace: swiflection.xcworkspace
-before_script:
-- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/profile/iOSTeam_Provisioning_Profile_combrightdigit.mobileprovision.enc -d -a -out account/profile/iOSTeam_Provisioning_Profile_combrightdigit.mobileprovision
-- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/certs/dev.cer.enc -d -a -out account/certs/dev.cer
-- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/certs/dev.p12.enc -d -a -out account/certs/dev.p12
-- ./scripts/add_key.sh
-after_script:
-- ./scripts/remove_key.sh
-rvm: 2.1.4 
-osx_image: xcode61
 matrix:
   include:
     #- xcode_scheme: Swiflection_IOS
@@ -24,6 +15,15 @@ matrix:
   exclude:
     - xcode_scheme: 
       xcode_sdk: 
+before_script:
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/profile/iOSTeam_Provisioning_Profile_combrightdigit.mobileprovision.enc -d -a -out account/profile/iOSTeam_Provisioning_Profile_combrightdigit.mobileprovision
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/certs/dev.cer.enc -d -a -out account/certs/dev.cer
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/certs/dev.p12.enc -d -a -out account/certs/dev.p12
+- ./scripts/add_key.sh
+after_script:
+- ./scripts/remove_key.sh
+rvm: 2.1.4 
+osx_image: xcode61
 env:
   global:  
   - 'DEVELOPER_NAME="iPhone Developer: Leo Dion (5VZ4KT69B9)"'

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef id (^factory)(NSArray*);
+typedef id (^factory)();
 
 @interface MethodImp : NSObject
 + (factory) closureFromImplementation: (IMP) implementation fromClass:(id)cls withSelector: (SEL) selector;

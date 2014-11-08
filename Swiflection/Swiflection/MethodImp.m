@@ -10,9 +10,9 @@
 
 @implementation MethodImp
 + (factory) closureFromImplementation: (IMP) implementation fromClass:(id)cls withSelector: (SEL) selector {
-  id (*factoryImp)(id, SEL, id,...) = (void *) implementation;
-  return ^(NSArray * parameters){
-    return factoryImp([cls alloc], selector, parameters);
+  id (*factoryImp)(id, SEL) = (void *) implementation;
+  return ^(){
+    return factoryImp([cls alloc], selector);
   };
 }
 @end

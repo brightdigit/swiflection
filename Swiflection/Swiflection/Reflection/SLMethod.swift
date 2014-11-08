@@ -35,7 +35,7 @@ public class SLMethod {
     }
   }
   
-  public func closure () -> ([AnyObject]) -> AnyObject! {
+  public func closure () -> () -> AnyObject! {
     var imp = method_getImplementation(self.objc_Method)
     
     return MethodImp.closureFromImplementation(imp, fromClass: self.slClass.objc_Class, withSelector: self.selector)
