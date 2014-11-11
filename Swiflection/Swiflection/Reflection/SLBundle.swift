@@ -8,6 +8,8 @@
 
 import Foundation
 
+public typealias CString = UnsafePointer<Int8>
+
 public class SLBundle {
   public let nsBundle:NSBundle!
   private var _classes:[SLClass]?
@@ -32,6 +34,24 @@ public class SLBundle {
     }
     nsBundle!.load()
     self.nsBundle = nsBundle!
+  }
+  
+  public class func fromNSBundle (bundle: AnyObject) -> SLBundle? {
+    if let nsBundle = bundle as? NSBundle {
+      return SLBundle(nsBundle: nsBundle)
+    } else {
+      return nil
+    }
+  }
+  
+  public var imageName : CString {
+    if let cls: AnyClass = self.nsBundle.principalClass {
+      return class_getImageName(cls)
+    } else if let executablePath = self.nsBundle.executablePath {
+      return NSString(string: executablePath).UTF8String
+    } else {
+      return CString.null()
+    }
   }
   
 }

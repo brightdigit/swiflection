@@ -53,19 +53,24 @@ public class SLClass : Printable {
     }
   }
   
+  public convenience init (className: CString) {
+    var cls:AnyClass! = objc_lookUpClass(className)
+    self.init(objc_Class: cls)
+  }
+  
   public class func from(#objc_Class: AnyClass) -> SLClass {
     return SLClass(objc_Class: objc_Class)
   }
   
+  public class func from(#className: CString) -> SLClass {
+    return SLClass(className: className)
+  }
+  
   public class func classes (fromBundle bundle:SLBundle) -> [SLClass] {
     var ucount:UInt32 = 0
-    let imageName = class_getImageName(bundle.nsBundle.principalClass)
+    let imageName = bundle.imageName
     let classIterator = UmpIterator(parameter: imageName, method: objc_copyClassNamesForImage)
-    return classIterator.map{
-      (pointer) -> SLClass in
-      var cls:AnyClass! = objc_lookUpClass(pointer)
-      return SLClass(objc_Class: cls)
-    }
+    return classIterator.map(SLClass.from)
   }
   
   public class var allClasses:[SLClass] {

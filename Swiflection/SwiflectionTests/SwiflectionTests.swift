@@ -61,7 +61,7 @@ class SwiflectionTests: XCTestCase {
       }
     }.executeSync(error: error)
     
-    var obj = methods[0].closure()() as? SampleClass
+    var obj = methods[0].closure() as? SampleClass
     XCTAssert(obj != nil, "not returning valid object")
   }
   
