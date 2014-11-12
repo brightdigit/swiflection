@@ -83,6 +83,13 @@ public class SLClass : Printable {
       return ptcl.name == name
     }
   }
+  
+  public func adoptsProtocol(ptcl: Protocol) -> Bool {
+    return self.protocols.some{
+      (p) -> Bool in
+      return protocol_isEqual(p.objc_Protocol, ptcl)
+    }
+  }
 }
 
 
