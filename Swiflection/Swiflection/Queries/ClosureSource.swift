@@ -15,7 +15,7 @@ public class ClosureSource<T> : Source<T> {
     self.closure = closure
   }
 
-  public override func executeSync(#error: NSErrorPointer) -> [T] {
+  public override func execute(#error: NSErrorPointer) -> [T] {
     return closure()
   }
 }

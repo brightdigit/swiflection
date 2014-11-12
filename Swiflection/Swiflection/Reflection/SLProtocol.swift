@@ -9,7 +9,7 @@
 import Foundation
 
 public class SLProtocol {
-  public let objc_Protocol:Protocol
+  public let objc_Protocol:Protocol!
   private var _name:String?
   
   public var name:String {
@@ -23,6 +23,14 @@ public class SLProtocol {
     self.objc_Protocol = objc_Protocol
   }
   
+  public init?(name: String) {
+    if let objc_Protocol = objc_getProtocol(name.cString) {
+      self.objc_Protocol = objc_Protocol
+    } else {
+      return nil
+    }
+  }
+  
   public class func protocols (fromClass cls:SLClass) -> [SLProtocol] {
     return ArumpIterator(parameter: cls.objc_Class, method: class_copyProtocolList).map(SLProtocol.from)
   }
@@ -34,5 +42,9 @@ public class SLProtocol {
   public class func getName (#objc_Protocol:Protocol) -> String {
     let cName = protocol_getName(objc_Protocol)
     return String.fromCString(cName)!
+  }
+
+  public func isAdoptedBy(slClass: SLClass) -> Bool {
+    return slClass.adoptsProtocol(self)
   }
 }

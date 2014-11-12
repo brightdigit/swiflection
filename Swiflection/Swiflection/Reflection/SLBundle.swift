@@ -10,6 +10,12 @@ import Foundation
 
 public typealias CString = UnsafePointer<Int8>
 
+public extension String {
+  public var cString : CString {
+    return NSString(string: self).UTF8String
+  }
+}
+
 public class SLBundle {
   public let nsBundle:NSBundle!
   private var _classes:[SLClass]?

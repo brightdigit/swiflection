@@ -17,7 +17,7 @@ public class MapSource<T,U> : Source<U> {
     self.map = map
   }
   
-  public override func executeSync(#error: NSErrorPointer) -> [U] {
-    return source.executeSync(error: error).map(self.map).reduce([]) {$0 + $1}
+  public override func execute(#error: NSErrorPointer) -> [U] {
+    return source.execute(error: error).map(self.map).reduce([]) {$0 + $1}
   }
 }

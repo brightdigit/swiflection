@@ -17,7 +17,7 @@ public class FilteredSource<T> : Source<T> {
     self.filter = filter
   }
   
-  public override func executeSync(#error: NSErrorPointer) -> [T] {
-    return source.executeSync(error: error).filter(self.filter)
+  public override func execute(#error: NSErrorPointer) -> [T] {
+    return source.execute(error: error).filter(self.filter)
   }
 }

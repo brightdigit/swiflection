@@ -26,14 +26,14 @@ public class Source<T> {
     return AsyncMapSource(source: self, map: closure)
   }
   */
-  public func executeSync(#error: NSErrorPointer) -> [T] {
+  public func execute(#error: NSErrorPointer) -> [T] {
     return []
   }
   
   public func execute(closure: ([T], NSError?) -> Void) {
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
       var error:NSError?
-      var result = self.executeSync(error: &error)
+      var result = self.execute(error: &error)
       closure(result, error)
     })
   }

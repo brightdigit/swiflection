@@ -90,6 +90,10 @@ public class SLClass : Printable {
       return protocol_isEqual(p.objc_Protocol, ptcl)
     }
   }
+  
+  public func adoptsProtocol(slProtocol: SLProtocol) -> Bool {
+    return self.adoptsProtocol(slProtocol.objc_Protocol)
+  }
 }
 
 
