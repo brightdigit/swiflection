@@ -46,6 +46,16 @@ public class SLBundle {
     self.nsBundle = nsBundle!
   }
   
+  public init? (identifier: String) {
+    let nsBundle = NSBundle(identifier: identifier)
+    if nsBundle == nil {
+      return nil
+    }
+    nsBundle!.load()
+    self.nsBundle = nsBundle!
+    
+  }
+  
   public class func fromNSBundle (bundle: AnyObject) -> SLBundle? {
     if let nsBundle = bundle as? NSBundle {
       return SLBundle(nsBundle: nsBundle)

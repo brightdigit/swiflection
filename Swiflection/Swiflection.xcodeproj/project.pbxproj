@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B11597D1A14DE960006D02D /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B11597C1A14DE960006D02D /* Builder.swift */; };
+		7B11597E1A14E0060006D02D /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B11597C1A14DE960006D02D /* Builder.swift */; };
 		7B118E941A03B1B000F0647A /* SwiflectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118E931A03B1B000F0647A /* SwiflectionTests.swift */; };
 		7B118EAD1A03B22300F0647A /* Swiflection_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B118EA21A03B22300F0647A /* Swiflection_IOS.framework */; };
 		7B118F1A1A03CB5B00F0647A /* SwiflectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118E931A03B1B000F0647A /* SwiflectionTests.swift */; };
@@ -110,6 +112,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7B11597C1A14DE960006D02D /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Builder.swift; path = Swiflection/Builder.swift; sourceTree = "<group>"; };
 		7B118E811A03B1B000F0647A /* Swiflection_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiflection_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B118E851A03B1B000F0647A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B118E8C1A03B1B000F0647A /* SwiflectionTests_OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiflectionTests_OSX.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -319,6 +322,7 @@
 				7B99C5E01A09B31C006267E2 /* Swiflection-Bridge.h */,
 				7BE8E1B11A090D930088AF10 /* MethodImp.h */,
 				7BE8E1B21A090D930088AF10 /* MethodImp.m */,
+				7B11597C1A14DE960006D02D /* Builder.swift */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -569,6 +573,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B11597D1A14DE960006D02D /* Builder.swift in Sources */,
 				7B99C5F41A09B50B006267E2 /* SLBundle.swift in Sources */,
 				7B99C5FC1A09B50B006267E2 /* SLQuery.swift in Sources */,
 				7B99C6041A09B50B006267E2 /* ClosureSource.swift in Sources */,
@@ -599,6 +604,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B11597E1A14E0060006D02D /* Builder.swift in Sources */,
 				7B99C5F51A09B50B006267E2 /* SLBundle.swift in Sources */,
 				7B99C5FD1A09B50B006267E2 /* SLQuery.swift in Sources */,
 				7B99C6051A09B50B006267E2 /* ClosureSource.swift in Sources */,
