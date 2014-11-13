@@ -14,6 +14,10 @@ public extension String {
   public var cString : CString {
     return NSString(string: self).UTF8String
   }
+  
+  func beginsWith (prefix: String) -> Bool {
+    return self.hasPrefix(prefix)
+  }
 }
 
 public class SLBundle {
