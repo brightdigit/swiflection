@@ -26,4 +26,15 @@ extension Array {
     }
     return false
   }
+  
+  func dictionary<K,V>(transformer: T -> (K, V)?) -> [K:V] {
+    return self.reduce([:]) {
+      (var dict, e) in
+      if let (key, value) = transformer(e)
+      {
+        dict[key] = value
+      }
+      return dict
+    }
+  }
 }

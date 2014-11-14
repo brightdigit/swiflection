@@ -20,6 +20,9 @@ public extension String {
   }
 }
 
+let imageNames = UmpIterator(method: objc_copyImageNames).map(String.fromCString).filter{ $0 != nil}.dictionary{ ($0!.stringByResolvingSymlinksInPath, $0!) }
+
+
 public class SLBundle {
   public let nsBundle:NSBundle!
   private var _classes:[SLClass]?
@@ -64,10 +67,18 @@ public class SLBundle {
     }
   }
   
+  public var resolvedExecutablePath : String? {
+    if let path = self.nsBundle.executablePath?.stringByResolvingSymlinksInPath {
+      return imageNames[path]
+    } else {
+      return nil
+    }
+  }
+  
   public var imageName : CString {
     if let cls: AnyClass = self.nsBundle.principalClass {
       return class_getImageName(cls)
-    } else if let executablePath = self.nsBundle.executablePath {
+    } else if let executablePath = self.resolvedExecutablePath {
       return NSString(string: executablePath).UTF8String
     } else {
       return CString.null()

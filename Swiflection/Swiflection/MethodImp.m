@@ -12,8 +12,7 @@
 + (factory) closureFromImplementation: (IMP) implementation fromClass:(id)cls withSelector: (SEL) selector {
   id (*factoryImp)(id, SEL) = (void *) implementation;
   return ^(){
-    id result = factoryImp([cls alloc], selector);
-    return result;
+    return factoryImp([cls alloc], selector);
   };
 }
 @end
