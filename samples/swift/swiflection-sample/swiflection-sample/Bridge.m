@@ -1,14 +1,15 @@
 //
-//  MyProtocol.swift
+//  Bridge.m
 //  swiflection-sample
 //
 //  Created by Leo G Dion on 12/10/14.
 //  Copyright (c) 2014 BrightDigit. All rights reserved.
 //
 
-import Foundation
+#import "Bridge.h"
 
-@objc(MyProtocol)
-public protocol MyProtocol {
-  func helloWorld ()
+@implementation Bridge
++ alloc: (Class) cls {
+  return [cls alloc];
 }
+@end

@@ -10,6 +10,7 @@
 		7BA91A801A38F4D200767ADE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA91A7F1A38F4D200767ADE /* main.swift */; };
 		7BA91A871A38F4FF00767ADE /* MyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA91A861A38F4FF00767ADE /* MyProtocol.swift */; };
 		7BA91A891A38F53200767ADE /* MyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA91A881A38F53200767ADE /* MyClass.swift */; };
+		7BA91A8D1A38F7E200767ADE /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA91A8C1A38F7E200767ADE /* Bridge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,9 @@
 		7BA91A7F1A38F4D200767ADE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		7BA91A861A38F4FF00767ADE /* MyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProtocol.swift; sourceTree = "<group>"; };
 		7BA91A881A38F53200767ADE /* MyClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyClass.swift; sourceTree = "<group>"; };
+		7BA91A8A1A38F7E200767ADE /* swiflection-sample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "swiflection-sample-Bridging-Header.h"; sourceTree = "<group>"; };
+		7BA91A8B1A38F7E200767ADE /* Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
+		7BA91A8C1A38F7E200767ADE /* Bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,9 @@
 				7BA91A7F1A38F4D200767ADE /* main.swift */,
 				7BA91A861A38F4FF00767ADE /* MyProtocol.swift */,
 				7BA91A881A38F53200767ADE /* MyClass.swift */,
+				7BA91A8B1A38F7E200767ADE /* Bridge.h */,
+				7BA91A8C1A38F7E200767ADE /* Bridge.m */,
+				7BA91A8A1A38F7E200767ADE /* swiflection-sample-Bridging-Header.h */,
 			);
 			path = "swiflection-sample";
 			sourceTree = "<group>";
@@ -124,6 +131,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BA91A8D1A38F7E200767ADE /* Bridge.m in Sources */,
 				7BA91A801A38F4D200767ADE /* main.swift in Sources */,
 				7BA91A871A38F4FF00767ADE /* MyProtocol.swift in Sources */,
 				7BA91A891A38F53200767ADE /* MyClass.swift in Sources */,
@@ -211,14 +219,21 @@
 		7BA91A841A38F4D200767ADE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "swiflection-sample/swiflection-sample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		7BA91A851A38F4D200767ADE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "swiflection-sample/swiflection-sample-Bridging-Header.h";
 			};
 			name = Release;
 		};
