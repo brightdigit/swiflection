@@ -8,6 +8,7 @@
 
 import Foundation
 
+@availability(*, deprecated=1.00)
 public class SLMethod {
   public let objc_Method:Method
   private let slClass:SLClass
@@ -34,9 +35,10 @@ public class SLMethod {
       return SLMethod(objc_Method:objc_Method, slClass: slClass)
     }
   }
-  
+  /*
   public var closure: () -> AnyObject! {
     var imp = method_getImplementation(self.objc_Method)
     return MethodImp.closureFromImplementation(imp, fromClass: self.slClass.objc_Class, withSelector: self.selector)
   }
+*/
 }

@@ -45,9 +45,16 @@ class SwiflectionTests: XCTestCase {
     }
   }
   
-  func testMethod() {
+  func testFactory() {
     var error: NSErrorPointer = nil
+    var objs = SLQuery.from.allClasses.filter{
+      $0.adoptsProtocol(name: sampleProtocol)
+      }.map{
+      [$0.build()]
+    }.execute(error: error)
     
+    XCTAssert(objs.count < 1, "not returning valid object")
+    /*
     var methods = SLQuery.from.allClasses.filter{
       (slc) -> Bool in
       return slc.name == sampleClass
@@ -62,7 +69,8 @@ class SwiflectionTests: XCTestCase {
     }.execute(error: error)
     
     var obj = methods[0].closure() as? SampleClass
-    XCTAssert(obj != nil, "not returning valid object")
+*/
+    //XCTAssert(obj != nil, "not returning valid object")
   }
   
   func testLoadLibrary() {

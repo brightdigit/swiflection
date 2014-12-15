@@ -94,6 +94,11 @@ public class SLClass : Printable {
   public func adoptsProtocol(slProtocol: SLProtocol) -> Bool {
     return self.adoptsProtocol(slProtocol.objc_Protocol)
   }
+  
+  public func build() -> AnyObject {
+    let type = self.objc_Class as NSObject.Type
+    return type()
+  }
 }
 
 
