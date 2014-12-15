@@ -8,20 +8,7 @@
 
 import Foundation
 
-public typealias CString = UnsafePointer<Int8>
-
-public extension String {
-  public var cString : CString {
-    return NSString(string: self).UTF8String
-  }
-  
-  func beginsWith (prefix: String) -> Bool {
-    return self.hasPrefix(prefix)
-  }
-}
-
 let imageNames = UmpIterator(method: objc_copyImageNames).map(String.fromCString).filter{ $0 != nil}.dictionary{ ($0!.stringByResolvingSymlinksInPath, $0!) }
-
 
 public class SLBundle {
   public let nsBundle:NSBundle!
