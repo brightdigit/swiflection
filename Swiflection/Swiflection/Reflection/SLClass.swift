@@ -10,8 +10,7 @@ import Foundation
 
 public class SLClass : Printable {
   public let objc_Class:AnyClass
-  private var _protocols:[SLProtocol]?
-  private let _methods:Lazy<[SLMethod]>!
+  private var _protocols:Lazy<[SLProtocol]>!
   
   public var name:String {
     return NSStringFromClass(self.objc_Class)
@@ -21,35 +20,14 @@ public class SLClass : Printable {
     return self.name
   }
   
-  public var methods:[SLMethod] {
-    return _methods.value
-  }
-  
   public var protocols:[SLProtocol] {
-    get {
-      if _protocols == nil {
-        _protocols = SLProtocol.protocols(fromClass: self)
-      }
-      return _protocols!
-    }
-  }
-  
-  public func method (selector: Selector) -> SLMethod? {
-    for method in self.methods {
-      if (method.selector == selector) {
-        return method
-      }
-    }
-    return nil
+    return self._protocols.value
   }
   
   public init (objc_Class : AnyClass) {
     self.objc_Class = objc_Class
-    self._methods = Lazy{
-      UmpIterator(parameter: objc_Class, method: class_copyMethodList).map{
-        (objc_Method) -> SLMethod in
-        return SLMethod(objc_Method: objc_Method, slClass: self)
-      }
+    self._protocols = Lazy{
+       SLProtocol.protocols(fromClass: self)
     }
   }
   

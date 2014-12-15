@@ -7,19 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B11597D1A14DE960006D02D /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B11597C1A14DE960006D02D /* Builder.swift */; };
-		7B11597E1A14E0060006D02D /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B11597C1A14DE960006D02D /* Builder.swift */; };
 		7B118E941A03B1B000F0647A /* SwiflectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118E931A03B1B000F0647A /* SwiflectionTests.swift */; };
 		7B118EAD1A03B22300F0647A /* Swiflection_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B118EA21A03B22300F0647A /* Swiflection_IOS.framework */; };
 		7B118F1A1A03CB5B00F0647A /* SwiflectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B118E931A03B1B000F0647A /* SwiflectionTests.swift */; };
+		7B5DAEDC1A3F2C0E004D8A84 /* String.cString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5DAEDB1A3F2C0E004D8A84 /* String.cString.swift */; };
+		7B5DAEDD1A3F2C0E004D8A84 /* String.cString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5DAEDB1A3F2C0E004D8A84 /* String.cString.swift */; };
 		7B6AE7871A0BF8B30024E0DF /* Swiflection_IOS.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 7B118EA21A03B22300F0647A /* Swiflection_IOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7B6AE7881A0BF8CD0024E0DF /* Swiflection_Sample_IOS.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 7B118F141A03B61500F0647A /* Swiflection_Sample_IOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7B99C5F41A09B50B006267E2 /* SLBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5E41A09B50B006267E2 /* SLBundle.swift */; };
 		7B99C5F51A09B50B006267E2 /* SLBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5E41A09B50B006267E2 /* SLBundle.swift */; };
 		7B99C5F61A09B50B006267E2 /* SLClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5E51A09B50B006267E2 /* SLClass.swift */; };
 		7B99C5F71A09B50B006267E2 /* SLClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5E51A09B50B006267E2 /* SLClass.swift */; };
-		7B99C5F81A09B50B006267E2 /* SLMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5E61A09B50B006267E2 /* SLMethod.swift */; };
-		7B99C5F91A09B50B006267E2 /* SLMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5E61A09B50B006267E2 /* SLMethod.swift */; };
 		7B99C5FA1A09B50B006267E2 /* SLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5E71A09B50B006267E2 /* SLProtocol.swift */; };
 		7B99C5FB1A09B50B006267E2 /* SLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5E71A09B50B006267E2 /* SLProtocol.swift */; };
 		7B99C5FC1A09B50B006267E2 /* SLQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99C5E81A09B50B006267E2 /* SLQuery.swift */; };
@@ -106,7 +104,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7B11597C1A14DE960006D02D /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Builder.swift; path = Swiflection/Builder.swift; sourceTree = "<group>"; };
 		7B118E811A03B1B000F0647A /* Swiflection_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiflection_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B118E851A03B1B000F0647A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B118E8C1A03B1B000F0647A /* SwiflectionTests_OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiflectionTests_OSX.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,9 +114,9 @@
 		7B118EAC1A03B22300F0647A /* Swiflection_IOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swiflection_IOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B118EB21A03B22300F0647A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B118EE61A03B46900F0647A /* Swiflection-Sample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Swiflection-Sample.xcodeproj"; path = "Examples/Swiflection-Sample/Swiflection-Sample.xcodeproj"; sourceTree = "<group>"; };
+		7B5DAEDB1A3F2C0E004D8A84 /* String.cString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.cString.swift; path = Swiflection/String.cString.swift; sourceTree = "<group>"; };
 		7B99C5E41A09B50B006267E2 /* SLBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLBundle.swift; sourceTree = "<group>"; };
 		7B99C5E51A09B50B006267E2 /* SLClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLClass.swift; sourceTree = "<group>"; };
-		7B99C5E61A09B50B006267E2 /* SLMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLMethod.swift; sourceTree = "<group>"; };
 		7B99C5E71A09B50B006267E2 /* SLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLProtocol.swift; sourceTree = "<group>"; };
 		7B99C5E81A09B50B006267E2 /* SLQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLQuery.swift; sourceTree = "<group>"; };
 		7B99C5EA1A09B50B006267E2 /* ArumpIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArumpIterator.swift; sourceTree = "<group>"; };
@@ -310,7 +307,7 @@
 				7B99C5EC1A09B50B006267E2 /* Queries */,
 				7B99C5F21A09B50B006267E2 /* Array.Test.swift */,
 				7B99C5F31A09B50B006267E2 /* Lazy.swift */,
-				7B11597C1A14DE960006D02D /* Builder.swift */,
+				7B5DAEDB1A3F2C0E004D8A84 /* String.cString.swift */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -328,7 +325,6 @@
 			children = (
 				7B99C5E41A09B50B006267E2 /* SLBundle.swift */,
 				7B99C5E51A09B50B006267E2 /* SLClass.swift */,
-				7B99C5E61A09B50B006267E2 /* SLMethod.swift */,
 				7B99C5E71A09B50B006267E2 /* SLProtocol.swift */,
 				7B99C5E81A09B50B006267E2 /* SLQuery.swift */,
 			);
@@ -557,12 +553,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B11597D1A14DE960006D02D /* Builder.swift in Sources */,
 				7B99C5F41A09B50B006267E2 /* SLBundle.swift in Sources */,
 				7B99C5FC1A09B50B006267E2 /* SLQuery.swift in Sources */,
 				7B99C6041A09B50B006267E2 /* ClosureSource.swift in Sources */,
 				7B99C6081A09B50B006267E2 /* MapSource.swift in Sources */,
-				7B99C5F81A09B50B006267E2 /* SLMethod.swift in Sources */,
+				7B5DAEDC1A3F2C0E004D8A84 /* String.cString.swift in Sources */,
 				7B99C60E1A09B50B006267E2 /* Lazy.swift in Sources */,
 				7B99C5FA1A09B50B006267E2 /* SLProtocol.swift in Sources */,
 				7B99C6021A09B50B006267E2 /* AsyncMapSource.swift in Sources */,
@@ -587,12 +582,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B11597E1A14E0060006D02D /* Builder.swift in Sources */,
 				7B99C5F51A09B50B006267E2 /* SLBundle.swift in Sources */,
 				7B99C5FD1A09B50B006267E2 /* SLQuery.swift in Sources */,
 				7B99C6051A09B50B006267E2 /* ClosureSource.swift in Sources */,
 				7B99C6091A09B50B006267E2 /* MapSource.swift in Sources */,
-				7B99C5F91A09B50B006267E2 /* SLMethod.swift in Sources */,
+				7B5DAEDD1A3F2C0E004D8A84 /* String.cString.swift in Sources */,
 				7B99C60F1A09B50B006267E2 /* Lazy.swift in Sources */,
 				7B99C5FB1A09B50B006267E2 /* SLProtocol.swift in Sources */,
 				7B99C6031A09B50B006267E2 /* AsyncMapSource.swift in Sources */,
