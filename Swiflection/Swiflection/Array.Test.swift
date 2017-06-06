@@ -9,7 +9,7 @@
 import Foundation
 
 extension Array {
-  func every(closure: (T) -> Bool) -> Bool {
+  func every(_ closure: (Element) -> Bool) -> Bool {
     for item in self {
       if !closure(item) {
         return false
@@ -18,7 +18,7 @@ extension Array {
     return true
   }
   
-  func some(closure: (T) -> Bool) -> Bool {
+  func some(_ closure: (Element) -> Bool) -> Bool {
     for item in self {
       if closure(item) {
         return true
@@ -27,13 +27,15 @@ extension Array {
     return false
   }
   
-  func dictionary<K,V>(transformer: T -> (K, V)?) -> [K:V] {
+  func dictionary<K,V>(_ transformer: (Element) -> (K, V)?) -> [K:V] {
     return self.reduce([:]) {
-      (var dict, e) in
-      if let (key, value) = transformer(e)
+      (dict, e) in
+      guard let (key, value) = transformer(e) else
       {
-        dict[key] = value
+        return dict
       }
+      var dict = dict
+      dict[key] = value
       return dict
     }
   }

@@ -8,16 +8,16 @@
 
 import Foundation
 
-public class MapSource<T,U> : Source<U> {
-  private var source: Source<T>
-  private var map: (T) -> [U]
+open class MapSource<T,U> : Source<U> {
+  fileprivate var source: Source<T>
+  fileprivate var map: (T) -> [U]
   
-  public init (source: Source<T>, map: (T) -> [U]) {
+  public init (source: Source<T>, map: @escaping (T) -> [U]) {
     self.source = source
     self.map = map
   }
   
-  public override func execute(#error: NSErrorPointer) -> [U] {
-    return source.execute(error: error).map(self.map).reduce([]) {$0 + $1}
+  open override func execute() throws -> [U] {
+    return try source.execute().map(self.map).reduce([]) {$0 + $1}
   }
 }

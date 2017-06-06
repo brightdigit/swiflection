@@ -8,16 +8,16 @@
 
 import Foundation
 
-public class FilteredSource<T> : Source<T> {
-  private var source: Source<T>
-  private var filter: (T) -> Bool
+open class FilteredSource<T> : Source<T> {
+  fileprivate var source: Source<T>
+  fileprivate var filter: (T) -> Bool
   
-  public init (source: Source<T>, filter: (T) -> Bool) {
+  public init (source: Source<T>, filter: @escaping (T) -> Bool) {
     self.source = source
     self.filter = filter
   }
   
-  public override func execute(#error: NSErrorPointer) -> [T] {
-    return source.execute(error: error).filter(self.filter)
+  open override func execute() throws -> [T] {
+    return try source.execute().filter(self.filter)
   }
 }

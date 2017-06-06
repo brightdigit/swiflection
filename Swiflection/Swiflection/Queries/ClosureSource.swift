@@ -8,14 +8,14 @@
 
 import Foundation
 
-public class ClosureSource<T> : Source<T> {
-  private var closure: (() -> [T])
+open class ClosureSource<T> : Source<T> {
+  fileprivate var closure: (() -> [T])
   
-  public init (closure: () -> [T]) {
+  public init (closure: @escaping () -> [T]) {
     self.closure = closure
   }
 
-  public override func execute(#error: NSErrorPointer) -> [T] {
+  open override func execute() throws -> [T] {
     return closure()
   }
 }

@@ -8,32 +8,39 @@
 
 import Foundation
 
-public class Source<T> {
+open class Source<T> {
   
   public init () {
     
   }
   
-  public func filter(closure: (T) -> Bool) -> Source<T> {
+  open func filter(_ closure: @escaping (T) -> Bool) -> Source<T> {
     return FilteredSource(source: self, filter: closure)
   }
   
-  public func map<U>(closure: (T) -> [U]) -> Source<U> {
+  open func map<U>(_ closure: @escaping (T) -> [U]) -> Source<U> {
     return MapSource (source: self, map: closure)
   }
   /*
-  public func map<U>(closure: (T, ([U], NSError?) -> Void)) -> Source<U> {
-    return AsyncMapSource(source: self, map: closure)
-  }
-  */
-  public func execute(#error: NSErrorPointer) -> [T] {
+   public func map<U>(closure: (T, ([U], NSError?) -> Void)) -> Source<U> {
+   return AsyncMapSource(source: self, map: closure)
+   }
+   */
+  open func execute() throws -> [T] {
     return []
   }
   
-  public func execute(closure: ([T], NSError?) -> Void) {
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-      var error:NSError?
-      var result = self.execute(error: &error)
+  open func execute(_ closure: @escaping ([T]?, Error?) -> Void) {
+    DispatchQueue.global( priority: DispatchQueue.GlobalQueuePriority.default).async(execute: {
+      let error: Error?
+      let result : [T]?
+      do {
+        result = try self.execute()
+        error = nil
+      } catch let _error {
+        error = _error
+        result = nil
+      }
       closure(result, error)
     })
   }

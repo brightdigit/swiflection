@@ -8,9 +8,9 @@
 
 import Foundation
 
-public class UmpIterator<T> {
-  private let pointer:UnsafeMutablePointer<T>
-  private let ucount:UInt32
+open class UmpIterator<T> {
+  fileprivate let pointer:UnsafeMutablePointer<T>
+  fileprivate let ucount:UInt32
   
   public init (pointer: UnsafeMutablePointer<T>, count: UInt32) {
     self.pointer = pointer
@@ -19,20 +19,20 @@ public class UmpIterator<T> {
   
   public convenience init<U>(parameter: U, method: (U, UnsafeMutablePointer<UInt32>) -> UnsafeMutablePointer<T>) {
     var ucount:UInt32 = 0
-    var pointer = method(parameter, &ucount)
+    let pointer = method(parameter, &ucount)
     self.init(pointer: pointer, count: ucount)
   }
   
   public convenience init (method: (UnsafeMutablePointer<UInt32>) -> UnsafeMutablePointer<T>) {
     var ucount:UInt32 = 0
-    var pointer = method(&ucount)
+    let pointer = method(&ucount)
     self.init(pointer: pointer, count: ucount)
   }
   
-  public func map<W>(closure: (T) -> W) -> [W] {
+  open func map<W>(_ closure: (T) -> W) -> [W] {
     let count = Int(ucount)
     var result:[W] = []
-    for var index = 0; index < count; index++ {
+    for index in 0 ..< count {
       result.append(closure(pointer[index]))
     }
     return result

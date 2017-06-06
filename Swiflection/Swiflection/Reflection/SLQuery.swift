@@ -7,26 +7,26 @@
 //
 
 import Foundation
-
+//
 public struct SLQuery {
   
-  public struct map {
-    public static func asArray<T,U> (closure: (T)->U?) -> (T) -> [U] {
-      return {
-        (t) -> [U] in
-        if let item = closure(t) {
-          return [item]
-        } else {
-          return []
-        }
-      }
-    }
-  }
-  public struct from {
-    public static var allBundles = ClosureSource(closure: NSBundle.allBundles).map(SLQuery.map.asArray(SLBundle.fromNSBundle))
-    
-    public static var allFrameworks = ClosureSource(closure: NSBundle.allFrameworks).map(SLQuery.map.asArray(SLBundle.fromNSBundle))
-    
-    public static var allClasses = ClosureSource{SLClass.allClasses}
-  }
+//  public struct map {
+//    public static func asArray<T,U> (_ closure: @escaping (T)->U?) -> (T) -> [U] {
+//      return {
+//        (t) -> [U] in
+//        if let item = closure(t) {
+//          return [item]
+//        } else {
+//          return []
+//        }
+//      }
+//    }
+//  }
+//  public struct from {
+//    public static var allBundles = ClosureSource(closure: Bundle.allBundles).map(SLQuery.map.asArray(SLBundle.fromNSBundle))
+//    
+//    public static var allFrameworks = ClosureSource(closure: Bundle.allFrameworks).map(SLQuery.map.asArray(SLBundle.fromNSBundle))
+//    
+//    public static var allClasses = ClosureSource{SLClass.allClasses}
+//  }
 }

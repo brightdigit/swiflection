@@ -8,15 +8,15 @@
 
 import Foundation
 
-public class Lazy<T> {
-  private var _factory: () -> T
-  private var _value:T?
+open class Lazy<T> {
+  fileprivate var _factory: () -> T
+  fileprivate var _value:T?
   
-  public init (factory : () -> T) {
+  public init (factory : @escaping () -> T) {
     self._factory = factory
   }
   
-  public var value:T {
+  open var value:T {
     if self._value == nil {
       self._value = self._factory()
     }

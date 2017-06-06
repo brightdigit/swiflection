@@ -8,9 +8,9 @@
 
 import Foundation
 
-public class ArumpIterator<T> {
-  private let pointer:AutoreleasingUnsafeMutablePointer<T?>
-  private let ucount:UInt32
+open class ArumpIterator<T> {
+  fileprivate let pointer:AutoreleasingUnsafeMutablePointer<T?>
+  fileprivate let ucount:UInt32
   
   public init (pointer: AutoreleasingUnsafeMutablePointer<T?>, count: UInt32) {
     self.pointer = pointer
@@ -19,20 +19,20 @@ public class ArumpIterator<T> {
   
   public convenience init<U>(parameter: U, method: (U, UnsafeMutablePointer<UInt32>) -> AutoreleasingUnsafeMutablePointer<T?>) {
     var ucount:UInt32 = 0
-    var pointer = method(parameter, &ucount)
+    let pointer = method(parameter, &ucount)
     self.init(pointer: pointer, count: ucount)
   }
   
   public convenience init (method: (UnsafeMutablePointer<UInt32>) -> AutoreleasingUnsafeMutablePointer<T?>) {
     var ucount:UInt32 = 0
-    var pointer = method(&ucount)
+    let pointer = method(&ucount)
     self.init(pointer: pointer, count: ucount)
   }
   
-  public func map<W>(closure: (T) -> W) -> [W] {
+  open func map<W>(_ closure: (T) -> W) -> [W] {
     let count = Int(ucount)
     var result:[W] = []
-    for var index = 0; index < count; index++ {
+    for index in 0 ..< count {
       if let item = self.pointer[index] {
         result.append(closure(item))
       }

@@ -12,10 +12,10 @@ public typealias CString = UnsafePointer<Int8>
 
 public extension String {
   public var cString : CString {
-    return NSString(string: self).UTF8String
+    return NSString(string: self).utf8String!
   }
   
-  func beginsWith (prefix: String) -> Bool {
+  func beginsWith (_ prefix: String) -> Bool {
     return self.hasPrefix(prefix)
   }
 }
