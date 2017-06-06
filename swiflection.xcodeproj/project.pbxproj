@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B35F20771EE7154300A3F22C /* Swiflection_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B35F206D1EE7154200A3F22C /* Swiflection_macOS.framework */; };
+		B35F207C1EE7154300A3F22C /* Swiflection_macOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F207B1EE7154300A3F22C /* Swiflection_macOSTests.swift */; };
+		B35F207E1EE7154300A3F22C /* Swiflection_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = B35F20701EE7154200A3F22C /* Swiflection_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B35F20781EE7154300A3F22C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B35F20621EE714AB00A3F22C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B35F206C1EE7154200A3F22C;
+			remoteInfo = "Swiflection-macOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B35F206D1EE7154200A3F22C /* Swiflection_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiflection_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B35F20701EE7154200A3F22C /* Swiflection_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Swiflection_macOS.h; sourceTree = "<group>"; };
+		B35F20711EE7154200A3F22C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B35F20761EE7154300A3F22C /* Swiflection-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swiflection-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B35F207B1EE7154300A3F22C /* Swiflection_macOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swiflection_macOSTests.swift; sourceTree = "<group>"; };
+		B35F207D1EE7154300A3F22C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B35F20861EE715C700A3F22C /* Array.Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.Test.swift; sourceTree = "<group>"; };
+		B35F20881EE715C700A3F22C /* SLBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLBundle.swift; sourceTree = "<group>"; };
+		B35F20891EE715C700A3F22C /* SLClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLClass.swift; sourceTree = "<group>"; };
+		B35F208A1EE715C700A3F22C /* SLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLProtocol.swift; sourceTree = "<group>"; };
+		B35F208B1EE715C700A3F22C /* SLQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLQuery.swift; sourceTree = "<group>"; };
+		B35F208D1EE715C700A3F22C /* ArumpIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArumpIterator.swift; sourceTree = "<group>"; };
+		B35F208E1EE715C700A3F22C /* UmpIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmpIterator.swift; sourceTree = "<group>"; };
+		B35F208F1EE715C700A3F22C /* String.cString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.cString.swift; sourceTree = "<group>"; };
+		B35F20901EE715C700A3F22C /* Lazy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lazy.swift; sourceTree = "<group>"; };
+		B35F20921EE715C700A3F22C /* AsyncMapSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncMapSource.swift; sourceTree = "<group>"; };
+		B35F20931EE715C700A3F22C /* ClosureSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureSource.swift; sourceTree = "<group>"; };
+		B35F20941EE715C700A3F22C /* FilteredSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredSource.swift; sourceTree = "<group>"; };
+		B35F20951EE715C700A3F22C /* MapSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSource.swift; sourceTree = "<group>"; };
+		B35F20961EE715C700A3F22C /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B35F20691EE7154200A3F22C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B35F20731EE7154300A3F22C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B35F20771EE7154300A3F22C /* Swiflection_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B35F20611EE714AB00A3F22C = {
+			isa = PBXGroup;
+			children = (
+				B35F20851EE7157500A3F22C /* library */,
+				B35F206F1EE7154200A3F22C /* Swiflection-macOS */,
+				B35F207A1EE7154300A3F22C /* Swiflection-macOSTests */,
+				B35F206E1EE7154200A3F22C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B35F206E1EE7154200A3F22C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B35F206D1EE7154200A3F22C /* Swiflection_macOS.framework */,
+				B35F20761EE7154300A3F22C /* Swiflection-macOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B35F206F1EE7154200A3F22C /* Swiflection-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				B35F20701EE7154200A3F22C /* Swiflection_macOS.h */,
+				B35F20711EE7154200A3F22C /* Info.plist */,
+			);
+			path = "Swiflection-macOS";
+			sourceTree = "<group>";
+		};
+		B35F207A1EE7154300A3F22C /* Swiflection-macOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				B35F207B1EE7154300A3F22C /* Swiflection_macOSTests.swift */,
+				B35F207D1EE7154300A3F22C /* Info.plist */,
+			);
+			path = "Swiflection-macOSTests";
+			sourceTree = "<group>";
+		};
+		B35F20851EE7157500A3F22C /* library */ = {
+			isa = PBXGroup;
+			children = (
+				B35F20861EE715C700A3F22C /* Array.Test.swift */,
+				B35F20901EE715C700A3F22C /* Lazy.swift */,
+				B35F208C1EE715C700A3F22C /* Pointers */,
+				B35F20911EE715C700A3F22C /* Queries */,
+				B35F20871EE715C700A3F22C /* Reflection */,
+				B35F208F1EE715C700A3F22C /* String.cString.swift */,
+			);
+			path = library;
+			sourceTree = "<group>";
+		};
+		B35F20871EE715C700A3F22C /* Reflection */ = {
+			isa = PBXGroup;
+			children = (
+				B35F20881EE715C700A3F22C /* SLBundle.swift */,
+				B35F20891EE715C700A3F22C /* SLClass.swift */,
+				B35F208A1EE715C700A3F22C /* SLProtocol.swift */,
+				B35F208B1EE715C700A3F22C /* SLQuery.swift */,
+			);
+			path = Reflection;
+			sourceTree = "<group>";
+		};
+		B35F208C1EE715C700A3F22C /* Pointers */ = {
+			isa = PBXGroup;
+			children = (
+				B35F208D1EE715C700A3F22C /* ArumpIterator.swift */,
+				B35F208E1EE715C700A3F22C /* UmpIterator.swift */,
+			);
+			path = Pointers;
+			sourceTree = "<group>";
+		};
+		B35F20911EE715C700A3F22C /* Queries */ = {
+			isa = PBXGroup;
+			children = (
+				B35F20921EE715C700A3F22C /* AsyncMapSource.swift */,
+				B35F20931EE715C700A3F22C /* ClosureSource.swift */,
+				B35F20941EE715C700A3F22C /* FilteredSource.swift */,
+				B35F20951EE715C700A3F22C /* MapSource.swift */,
+				B35F20961EE715C700A3F22C /* Source.swift */,
+			);
+			path = Queries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B35F206A1EE7154200A3F22C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B35F207E1EE7154300A3F22C /* Swiflection_macOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B35F206C1EE7154200A3F22C /* Swiflection-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B35F20831EE7154300A3F22C /* Build configuration list for PBXNativeTarget "Swiflection-macOS" */;
+			buildPhases = (
+				B35F20681EE7154200A3F22C /* Sources */,
+				B35F20691EE7154200A3F22C /* Frameworks */,
+				B35F206A1EE7154200A3F22C /* Headers */,
+				B35F206B1EE7154200A3F22C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Swiflection-macOS";
+			productName = "Swiflection-macOS";
+			productReference = B35F206D1EE7154200A3F22C /* Swiflection_macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B35F20751EE7154300A3F22C /* Swiflection-macOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B35F20841EE7154300A3F22C /* Build configuration list for PBXNativeTarget "Swiflection-macOSTests" */;
+			buildPhases = (
+				B35F20721EE7154300A3F22C /* Sources */,
+				B35F20731EE7154300A3F22C /* Frameworks */,
+				B35F20741EE7154300A3F22C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B35F20791EE7154300A3F22C /* PBXTargetDependency */,
+			);
+			name = "Swiflection-macOSTests";
+			productName = "Swiflection-macOSTests";
+			productReference = B35F20761EE7154300A3F22C /* Swiflection-macOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B35F20621EE714AB00A3F22C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				TargetAttributes = {
+					B35F206C1EE7154200A3F22C = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
+					};
+					B35F20751EE7154300A3F22C = {
+						CreatedOnToolsVersion = 9.0;
+					};
+				};
+			};
+			buildConfigurationList = B35F20651EE714AB00A3F22C /* Build configuration list for PBXProject "swiflection" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B35F20611EE714AB00A3F22C;
+			productRefGroup = B35F206E1EE7154200A3F22C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B35F206C1EE7154200A3F22C /* Swiflection-macOS */,
+				B35F20751EE7154300A3F22C /* Swiflection-macOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B35F206B1EE7154200A3F22C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B35F20741EE7154300A3F22C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B35F20681EE7154200A3F22C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B35F20721EE7154300A3F22C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B35F207C1EE7154300A3F22C /* Swiflection_macOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B35F20791EE7154300A3F22C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B35F206C1EE7154200A3F22C /* Swiflection-macOS */;
+			targetProxy = B35F20781EE7154300A3F22C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B35F20661EE714AB00A3F22C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		B35F20671EE714AB00A3F22C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		B35F207F1EE7154300A3F22C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = MLT7M394S7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Swiflection-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brightdigit.Swiflection;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B35F20801EE7154300A3F22C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = MLT7M394S7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Swiflection-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brightdigit.Swiflection;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B35F20811EE7154300A3F22C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = MLT7M394S7;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Swiflection-macOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brightdigit.Swiflection-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		B35F20821EE7154300A3F22C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = MLT7M394S7;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Swiflection-macOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brightdigit.Swiflection-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B35F20651EE714AB00A3F22C /* Build configuration list for PBXProject "swiflection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B35F20661EE714AB00A3F22C /* Debug */,
+				B35F20671EE714AB00A3F22C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B35F20831EE7154300A3F22C /* Build configuration list for PBXNativeTarget "Swiflection-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B35F207F1EE7154300A3F22C /* Debug */,
+				B35F20801EE7154300A3F22C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B35F20841EE7154300A3F22C /* Build configuration list for PBXNativeTarget "Swiflection-macOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B35F20811EE7154300A3F22C /* Debug */,
+				B35F20821EE7154300A3F22C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B35F20621EE714AB00A3F22C /* Project object */;
+}
