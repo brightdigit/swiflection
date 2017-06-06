@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:swiflection.xcodeproj">
+      location = "self:/Users/leo/Documents/Projects/swiflection/Swiflection.xcodeproj">
    </FileRef>
 </Workspace>

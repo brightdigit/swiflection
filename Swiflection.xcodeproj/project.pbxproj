@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B35F20771EE7154300A3F22C /* Swiflection_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B35F206D1EE7154200A3F22C /* Swiflection_macOS.framework */; };
+		B35F20771EE7154300A3F22C /* Swiflection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B35F206D1EE7154200A3F22C /* Swiflection.framework */; };
 		B35F207C1EE7154300A3F22C /* Swiflection_macOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F207B1EE7154300A3F22C /* Swiflection_macOSTests.swift */; };
 		B35F207E1EE7154300A3F22C /* Swiflection_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = B35F20701EE7154200A3F22C /* Swiflection_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B388F8EE1EE7229C003221D5 /* SwiflectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B388F8ED1EE72297003221D5 /* SwiflectionTests.swift */; };
+		B388F8EF1EE724FF003221D5 /* UmpSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F208E1EE715C700A3F22C /* UmpSequence.swift */; };
+		B388F8F01EE72501003221D5 /* ArumpIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F208D1EE715C700A3F22C /* ArumpIterator.swift */; };
+		B388F8F11EE7255F003221D5 /* String.cString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F208F1EE715C700A3F22C /* String.cString.swift */; };
+		B388F8F21EE72883003221D5 /* Array.Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F20861EE715C700A3F22C /* Array.Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B35F206D1EE7154200A3F22C /* Swiflection_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiflection_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B35F206D1EE7154200A3F22C /* Swiflection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiflection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B35F20701EE7154200A3F22C /* Swiflection_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Swiflection_macOS.h; sourceTree = "<group>"; };
 		B35F20711EE7154200A3F22C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B35F20761EE7154300A3F22C /* Swiflection-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swiflection-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,7 +40,7 @@
 		B35F208A1EE715C700A3F22C /* SLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLProtocol.swift; sourceTree = "<group>"; };
 		B35F208B1EE715C700A3F22C /* SLQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLQuery.swift; sourceTree = "<group>"; };
 		B35F208D1EE715C700A3F22C /* ArumpIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArumpIterator.swift; sourceTree = "<group>"; };
-		B35F208E1EE715C700A3F22C /* UmpIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmpIterator.swift; sourceTree = "<group>"; };
+		B35F208E1EE715C700A3F22C /* UmpSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmpSequence.swift; sourceTree = "<group>"; };
 		B35F208F1EE715C700A3F22C /* String.cString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.cString.swift; sourceTree = "<group>"; };
 		B35F20901EE715C700A3F22C /* Lazy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lazy.swift; sourceTree = "<group>"; };
 		B35F20921EE715C700A3F22C /* AsyncMapSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncMapSource.swift; sourceTree = "<group>"; };
@@ -43,6 +48,7 @@
 		B35F20941EE715C700A3F22C /* FilteredSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredSource.swift; sourceTree = "<group>"; };
 		B35F20951EE715C700A3F22C /* MapSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSource.swift; sourceTree = "<group>"; };
 		B35F20961EE715C700A3F22C /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
+		B388F8ED1EE72297003221D5 /* SwiflectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiflectionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B35F20771EE7154300A3F22C /* Swiflection_macOS.framework in Frameworks */,
+				B35F20771EE7154300A3F22C /* Swiflection.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +73,7 @@
 		B35F20611EE714AB00A3F22C = {
 			isa = PBXGroup;
 			children = (
+				B388F8EC1EE72297003221D5 /* tests */,
 				B35F20851EE7157500A3F22C /* library */,
 				B35F206F1EE7154200A3F22C /* Swiflection-macOS */,
 				B35F207A1EE7154300A3F22C /* Swiflection-macOSTests */,
@@ -77,7 +84,7 @@
 		B35F206E1EE7154200A3F22C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B35F206D1EE7154200A3F22C /* Swiflection_macOS.framework */,
+				B35F206D1EE7154200A3F22C /* Swiflection.framework */,
 				B35F20761EE7154300A3F22C /* Swiflection-macOSTests.xctest */,
 			);
 			name = Products;
@@ -129,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				B35F208D1EE715C700A3F22C /* ArumpIterator.swift */,
-				B35F208E1EE715C700A3F22C /* UmpIterator.swift */,
+				B35F208E1EE715C700A3F22C /* UmpSequence.swift */,
 			);
 			path = Pointers;
 			sourceTree = "<group>";
@@ -144,6 +151,14 @@
 				B35F20961EE715C700A3F22C /* Source.swift */,
 			);
 			path = Queries;
+			sourceTree = "<group>";
+		};
+		B388F8EC1EE72297003221D5 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				B388F8ED1EE72297003221D5 /* SwiflectionTests.swift */,
+			);
+			path = tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,7 +190,7 @@
 			);
 			name = "Swiflection-macOS";
 			productName = "Swiflection-macOS";
-			productReference = B35F206D1EE7154200A3F22C /* Swiflection_macOS.framework */;
+			productReference = B35F206D1EE7154200A3F22C /* Swiflection.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B35F20751EE7154300A3F22C /* Swiflection-macOSTests */ = {
@@ -214,7 +229,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B35F20651EE714AB00A3F22C /* Build configuration list for PBXProject "swiflection" */;
+			buildConfigurationList = B35F20651EE714AB00A3F22C /* Build configuration list for PBXProject "Swiflection" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -254,6 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B388F8F21EE72883003221D5 /* Array.Test.swift in Sources */,
+				B388F8F11EE7255F003221D5 /* String.cString.swift in Sources */,
+				B388F8EF1EE724FF003221D5 /* UmpSequence.swift in Sources */,
+				B388F8F01EE72501003221D5 /* ArumpIterator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B35F207C1EE7154300A3F22C /* Swiflection_macOSTests.swift in Sources */,
+				B388F8EE1EE7229C003221D5 /* SwiflectionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,12 +299,16 @@
 		B35F20661EE714AB00A3F22C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				PRODUCT_MODULE_NAME = "$(PROJECT_NAME:c99extidentifier)";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		B35F20671EE714AB00A3F22C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				PRODUCT_MODULE_NAME = "$(PROJECT_NAME:c99extidentifier)";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -349,12 +373,11 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brightdigit.Swiflection;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(PROJECT_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -414,11 +437,10 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brightdigit.Swiflection;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(PROJECT_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -427,6 +449,7 @@
 		B35F20811EE7154300A3F22C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -478,6 +501,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.brightdigit.Swiflection-macOSTests";
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -489,6 +513,7 @@
 		B35F20821EE7154300A3F22C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -533,6 +558,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.brightdigit.Swiflection-macOSTests";
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -543,7 +569,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B35F20651EE714AB00A3F22C /* Build configuration list for PBXProject "swiflection" */ = {
+		B35F20651EE714AB00A3F22C /* Build configuration list for PBXProject "Swiflection" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B35F20661EE714AB00A3F22C /* Debug */,
@@ -559,6 +585,7 @@
 				B35F20801EE7154300A3F22C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B35F20841EE7154300A3F22C /* Build configuration list for PBXNativeTarget "Swiflection-macOSTests" */ = {
 			isa = XCConfigurationList;
@@ -567,6 +594,7 @@
 				B35F20821EE7154300A3F22C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

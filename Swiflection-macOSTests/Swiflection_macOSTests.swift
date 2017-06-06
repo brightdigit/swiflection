@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Swiflection_macOS
+@testable import Swiflection
 
 class Swiflection_macOSTests: XCTestCase {
     
