@@ -32,12 +32,12 @@ open class UmpSequence<T> : BidirectionalCollection {
   }
     self.init(pointer: pointer, count: ucount)
   }
-//  
-//  public convenience init (method: (UnsafeMutablePointer<UInt32>) -> UnsafeMutablePointer<T>) {
-//    var ucount:UInt32 = 0
-//    let pointer = method(&ucount)
-//    self.init(pointer: pointer, count: ucount)
-//  }
+  
+  public convenience init (method: (UnsafeMutablePointer<UInt32>) -> UnsafeMutablePointer<T>) {
+    var ucount:UInt32 = 0
+    let pointer = method(&ucount)
+    self.init(pointer: pointer, count: ucount)
+  }
   
   public subscript (position: Index) -> T {
     precondition(self.indices.contains(position), "out of bounds")

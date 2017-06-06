@@ -10,6 +10,7 @@ import XCTest
 import Foundation
 @testable import Swiflection
 
+
 extension String {
   public var resolvedPath : String  {
     return NSString(string: self).resolvingSymlinksInPath
@@ -27,7 +28,7 @@ extension String {
 //let sampleClass = "\(samplePrefix).SampleClass"
 //let sampleProtocol = "\(samplePrefix).SampleProtocolA"
 //
-//let imageNames = UmpSequence(method: objc_copyImageNames).map(String.init(cString:)).dictionary{ ($0.resolvedPath, $0)}
+let imageNames = UmpSequence(method: objc_copyImageNames).map(String.init(cString:)).dictionary{ ($0.resolvedPath, $0)}
 
 //let imageNames : [String] = UmpIterator(method: objc_copyImageNames).
 
@@ -40,12 +41,14 @@ extension Bundle {
       }
       
     }
-    open var imageName : CString {
+    open var imageName : CString? {
       
       if let cls: AnyClass = self.principalClass {
-        return class_getImageName(cls)!
+        return class_getImageName(cls)
       } else if let executablePath = self.resolvedExecutablePath {
-        return NSString(string: executablePath).utf8String!
+        return NSString(string: executablePath).utf8String
+      } else {
+        return nil
       }
     }
 }
@@ -83,19 +86,25 @@ class SwiflectionTests: XCTestCase {
   
   open class func classes (fromBundle bundle:Bundle) -> [AnyClass]? {
     var ucount:UInt32 = 0
-    if let pointer = objc_copyClassNamesForImage(bundle.imageName, &ucount) {
-      
-      return UmpSequence(pointer: pointer, count: ucount)
-    } else {
+    guard let imageName = bundle.imageName else {
       return nil
     }
+    
+    guard let collection = UmpSequence(parameter: imageName, method: objc_copyClassNamesForImage) else {
+      return nil
+    }
+    
+      return collection.flatMap {
+        objc_lookUpClass($0)
+      }
+  }
 //      return UmpSequence<UnsafePointer<Int8>>(parameter: bundle.imageName, method: objc_copyClassNamesForImage)
 //    if let imageName = bundle.imageName {
 //      return UmpSequence(parameter: imageName, method: objc_copyClassNamesForImage)
 //    } else {
 //      return imageNames.values
 //    }
-  }
+  
   /*
  (UnsafePointer<Int8>, UnsafeMutablePointer<UInt32>?) -> UnsafeMutablePointer<UnsafePointer<Int8>>?'
    
@@ -103,6 +112,8 @@ class SwiflectionTests: XCTestCase {
  */
   func testFactory() {
     let bundle = Bundle(for: type(of: self))
+    let classes = type(of: self).classes(fromBundle: bundle)
+    
 //    let slBundle = bundle.reflection
 //    slBundle.classes.whichAdopt(
     
