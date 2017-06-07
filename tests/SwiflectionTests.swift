@@ -52,7 +52,8 @@ extension Bundle {
       }
     }
 }
-protocol TestProtocolA {
+
+@objc protocol TestProtocolA {
   
 }
 
@@ -113,6 +114,14 @@ class SwiflectionTests: XCTestCase {
   func testFactory() {
     let bundle = Bundle(for: type(of: self))
     let classes = type(of: self).classes(fromBundle: bundle)
+    
+    let testA = TestProtocolA.self
+    
+    let prtcl = objc_getProtocol("Swiflection_macOSTests.TestProtocolA".cString)
+    let conformsToClasses = classes?.filter{
+      class_conformsToProtocol($0, prtcl)
+    }
+    debugPrint(conformsToClasses)
     
 //    let slBundle = bundle.reflection
 //    slBundle.classes.whichAdopt(
