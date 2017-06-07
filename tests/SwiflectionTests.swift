@@ -53,11 +53,17 @@ extension Bundle {
     }
 }
 
-@objc protocol TestProtocolA {
-  
+@objc protocol TestProtocolA  {
+  var value:String { get }
+  static func build () -> TestProtocolA
 }
 
 class TestClassA : TestProtocolA {
+  static func build() -> TestProtocolA {
+    return TestClassA()
+  }
+  
+  let value  = "test"
   
 }
 
@@ -121,7 +127,9 @@ class SwiflectionTests: XCTestCase {
     let conformsToClasses = classes?.filter{
       class_conformsToProtocol($0, prtcl)
     }
-    debugPrint(conformsToClasses)
+    
+    let item = conformsToClasses?.first as? TestProtocolA.Type
+    debugPrint(item?.build().value)
     
 //    let slBundle = bundle.reflection
 //    slBundle.classes.whichAdopt(
