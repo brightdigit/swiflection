@@ -23,7 +23,7 @@ extension Collection {
 var prtcls = [String]()
 let alphabet = "01234567890ABCDEFGHJKMNPQRTUVWXYZ"
 
-let rangeOfProtocolsPerClass = 0...5
+let rangeOfProtocolsPerClass = 1...5
 let rangeOfNumberOfClasses = 20...40
 //let numberOfClasses = arc4random_uniform(UInt32(rangeOfNumberOfClasses.upperBound - rangeOfNumberOfClasses.lowerBound)) + rangeOfNumberOfClasses.lowerBound
 
@@ -37,4 +37,23 @@ let classes = (0..<numberOfClasses).map{_ -> [Character] in
   }
 }
 
-debugPrint(classes)
+let protocols = classes.reduce([Character:[[Character]]]()) { (dictionary, characters) -> [Character:[[Character]]] in
+  var dictionary = dictionary
+  characters.forEach{
+    var classes = dictionary[$0] ?? [[Character]]()
+    classes.append(characters)
+    dictionary[$0] = classes
+  }
+  return dictionary
+}
+
+print(protocols.map{ "@objc public protocol Protocol\($0.key){}"}.joined(separator: "\n"))
+print(classes.map{ "public class Class\($0.map(String.init).joined(separator: "")): \($0.map{"Protocol\($0)"}.joined(separator: " ")) {}"}.joined(separator: "\n"))
+//A: AB AC AG
+//class ClassAB : ProtocolA, ProtocolB  {
+//}
+//
+//@objc protocol ProtocolA {
+//
+//}
+
