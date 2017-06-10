@@ -8,6 +8,12 @@
 
 import Foundation
 
+extension String {
+  public var resolvedPath : String  {
+    return NSString(string: self).resolvingSymlinksInPath
+  }
+}
+
 open class SLClass /*: CustomStringConvertible */{
 //  open let objc_Class:AnyClass
 //  fileprivate var _protocols:Lazy<[SLProtocol]>!
@@ -44,13 +50,18 @@ open class SLClass /*: CustomStringConvertible */{
 //    return SLClass(className: className)
 //  }
 //  
-//  open class func classes (fromBundle bundle:SLBundle) -> [SLClass] {
-//    var ucount:UInt32 = 0
-//    let imageName = bundle.imageName
-//    let classIterator = UmpIterator(parameter: imageName, method: objc_copyClassNamesForImage)
-//    return classIterator.map(SLClass.from)
-//  }
-//  
+  open class func classes (fromBundle bundle:SLBundle) -> [SLClass]? {
+    var ucount:UInt32 = 0
+    
+    guard let imageName = bundle.bundle.imageName else {
+      return nil
+    }
+    
+    let classIterator = UmpSequence(parameter: imageName, method: objc_copyClassNamesForImage)
+    
+    return classIterator.map(SLClass.from)
+  }
+//
 //  open class var allClasses:[SLClass] {
 //    return ArumpIterator(method: objc_copyClassList).map(SLClass.from)
 //  }

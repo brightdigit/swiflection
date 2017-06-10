@@ -11,11 +11,7 @@ import Foundation
 @testable import Swiflection
 
 
-extension String {
-  public var resolvedPath : String  {
-    return NSString(string: self).resolvingSymlinksInPath
-  }
-}
+
 //#if os(OSX)
 //import Swiflection_OSX
 //  let samplePrefix = "Swiflection_Sample_OSX"
@@ -32,26 +28,6 @@ let imageNames = UmpSequence(method: objc_copyImageNames).map(String.init(cStrin
 
 //let imageNames : [String] = UmpIterator(method: objc_copyImageNames).
 
-extension Bundle {
-    open var resolvedExecutablePath : String? {
-      if let path = self.executablePath?.resolvedPath {
-        return nil //imageNames[path]
-      } else {
-        return nil
-      }
-      
-    }
-    open var imageName : CString? {
-      
-      if let cls: AnyClass = self.principalClass {
-        return class_getImageName(cls)
-      } else if let executablePath = self.resolvedExecutablePath {
-        return NSString(string: executablePath).utf8String
-      } else {
-        return nil
-      }
-    }
-}
 
 @objc protocol TestProtocolA  {
   var value:String { get }
@@ -92,6 +68,7 @@ class SwiflectionTests: XCTestCase {
   }
   
   open class func classes (fromBundle bundle:Bundle) -> [AnyClass]? {
+    
     var ucount:UInt32 = 0
     guard let imageName = bundle.imageName else {
       return nil

@@ -10,8 +10,42 @@ import Foundation
 
 //let imageNames = UmpIterator(method: objc_copyImageNames).map(String.init(cString:)).filter{ $0 != nil}.dictionary{ ($0!.stringByResolvingSymlinksInPath, $0!) }
 
-open class SLBundle {
-//  open let nsBundle:Bundle!
+public extension Bundle {
+  public func reflect (_ closure: (SLBundleProtocol) -> Void) {
+    let slBundle = SLBundle(bundle: self)
+    closure(slBundle)
+  }
+  
+  open var resolvedExecutablePath : String? {
+    if let path = self.executablePath?.resolvedPath {
+      return nil //imageNames[path]
+    } else {
+      return nil
+    }
+    
+  }
+  open var imageName : CString? {
+    
+    if let cls: AnyClass = self.principalClass {
+      return class_getImageName(cls)
+    } else if let executablePath = self.resolvedExecutablePath {
+      return NSString(string: executablePath).utf8String
+    } else {
+      return nil
+    }
+  }
+}
+
+public protocol SLBundleProtocol {
+  var classes : [SLClass] { get }
+}
+
+public struct SLBundle : SLBundleProtocol {
+  public let bundle:Bundle
+  
+  public var classes: [SLClass] {
+    return SLClass.classes(fromBundle: self)
+  }
 //  fileprivate var _classes:[SLClass]?
 //
 //  open var classes:[SLClass] {
@@ -23,10 +57,11 @@ open class SLBundle {
 //    }
 //  }
 //
-//  public init (nsBundle: Bundle) {
-//    self.nsBundle = nsBundle
-//  }
-//  
+  public init (bundle: Bundle) {
+    self.bundle = bundle
+    
+  }
+//
 //  public init? (path: String) {
 //    let nsBundle = Bundle(path: path)
 //    if nsBundle == nil {
@@ -71,5 +106,5 @@ open class SLBundle {
 //      return CString.null()
 //    }
 //  }
-  
 }
+
