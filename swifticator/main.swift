@@ -8,6 +8,8 @@
 import Foundation
 import Darwin
 
+
+
 func randomNumber(inTheRangeOf range: CountableClosedRange<Int>) -> Int {
   return Int(arc4random_uniform(UInt32(range.upperBound - range.lowerBound))) + range.lowerBound
 }
@@ -29,31 +31,31 @@ let rangeOfNumberOfClasses = 20...40
 
 let numberOfClasses = randomNumber(inTheRangeOf: rangeOfNumberOfClasses)
 
-let classes = (0..<numberOfClasses).map{_ -> [Character] in
+var classesDictionary = [String:Void](minimumCapacity: numberOfClasses)
+while classesDictionary.count < classesDictionary.capacity {
   let numberOfProtocols = randomNumber(inTheRangeOf: rangeOfProtocolsPerClass)
-  return (0..<numberOfProtocols).map{
-    _ -> Character in
-    return alphabet.characters.randomItem
+  var protocols = [Character:Void](minimumCapacity: numberOfProtocols)
+  while protocols.count < protocols.capacity {
+    protocols[alphabet.randomItem] = ()
   }
+  let key = Array(protocols.keys).map{String($0)}.joined(separator: "")
+  classesDictionary[key] = ()
 }
+let classes = classesDictionary.keys
 
-let protocols = classes.reduce([Character:[[Character]]]()) { (dictionary, characters) -> [Character:[[Character]]] in
+let protocols = classes.reduce([Character:[String]]()) { (dictionary, characters) -> [Character:[String]] in
   var dictionary = dictionary
   characters.forEach{
-    var classes = dictionary[$0] ?? [[Character]]()
+    var classes = dictionary[$0] ?? [String]()
     classes.append(characters)
     dictionary[$0] = classes
   }
   return dictionary
 }
 
+print("import Foundation")
 print(protocols.map{ "@objc public protocol Protocol\($0.key){}"}.joined(separator: "\n"))
-print(classes.map{ "public class Class\($0.map(String.init).joined(separator: "")): \($0.map{"Protocol\($0)"}.joined(separator: " ")) {}"}.joined(separator: "\n"))
-//A: AB AC AG
-//class ClassAB : ProtocolA, ProtocolB  {
-//}
-//
-//@objc protocol ProtocolA {
-//
-//}
+print(classes.map{ "public class Class\($0.map(String.init).joined(separator: "")): \($0.map{"Protocol\($0)"}.joined(separator: ", ")) {}"}.joined(separator: "\n"))
+
+print(protocols.map{ "\($0.key): \($0.value.joined(separator: " "))" }.joined(separator: "\n"))
 
