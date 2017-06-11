@@ -25,9 +25,19 @@ extension Collection {
 var prtcls = [String]()
 let alphabet = "01234567890ABCDEFGHJKMNPQRTUVWXYZ"
 
-let rangeOfProtocolsPerClass = 1...5
-let rangeOfNumberOfClasses = 20...40
-//let numberOfClasses = arc4random_uniform(UInt32(rangeOfNumberOfClasses.upperBound - rangeOfNumberOfClasses.lowerBound)) + rangeOfNumberOfClasses.lowerBound
+let minimumProtocolsPerClass = 1
+let maximumProtocolsPerClass = 5
+let rangeOfProtocolsPerClass = minimumProtocolsPerClass...maximumProtocolsPerClass
+
+let minimumNumberOfClasses = 20
+let maximumNumberOfClasses = 40
+let rangeOfNumberOfClasses = minimumNumberOfClasses...maximumNumberOfClasses
+
+
+let swiftCodeFileURL : URL =  URL(fileURLWithPath: FileManager.default.currentDirectoryPath, isDirectory: true).appendingPathComponent("code.swift")
+
+
+let protocolListURL : URL =  URL(fileURLWithPath: FileManager.default.currentDirectoryPath, isDirectory: true).appendingPathComponent("protocols.txt")
 
 let numberOfClasses = randomNumber(inTheRangeOf: rangeOfNumberOfClasses)
 
@@ -53,9 +63,14 @@ let protocols = classes.reduce([Character:[String]]()) { (dictionary, characters
   return dictionary
 }
 
-print("import Foundation")
-print(protocols.map{ "@objc public protocol Protocol\($0.key){}"}.joined(separator: "\n"))
-print(classes.map{ "public class Class\($0.map(String.init).joined(separator: "")): \($0.map{"Protocol\($0)"}.joined(separator: ", ")) {}"}.joined(separator: "\n"))
 
-print(protocols.map{ "\($0.key): \($0.value.joined(separator: " "))" }.joined(separator: "\n"))
+var code = ["import Foundation"]
+code.append(protocols.map{ "@objc public protocol Protocol\($0.key){}"}.joined(separator: "\n"))
+code.append(classes.map{ "public class Class\($0.map(String.init).joined(separator: "")): \($0.map{"Protocol\($0)"}.joined(separator: ", ")) {}"}.joined(separator: "\n"))
 
+let list = protocols.map{ "\($0.key): \($0.value.joined(separator: " "))" }.joined(separator: "\n")
+
+try! code.joined(separator: "\n").write(to: swiftCodeFileURL, atomically: true, encoding: .utf8)
+print("wrote to \(swiftCodeFileURL).")
+try! list.write(to: protocolListURL, atomically: true, encoding: .utf8)
+print("wrote to \(protocolListURL).")
