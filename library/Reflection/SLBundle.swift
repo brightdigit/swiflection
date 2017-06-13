@@ -8,7 +8,8 @@
 
 import Foundation
 
-//let imageNames = UmpIterator(method: objc_copyImageNames).map(String.init(cString:)).filter{ $0 != nil}.dictionary{ ($0!.stringByResolvingSymlinksInPath, $0!) }
+NSString(
+let imageNames = UmpSequence(method: objc_copyImageNames).map(NSString.init(cString:)).filter{ $0 != nil}.dictionary{ (String($0!.resolvingSymlinksInPath), String($0!)) }
 
 public extension Bundle {
   public func reflect (_ closure: (SLBundleProtocol) -> Void) {
@@ -18,7 +19,7 @@ public extension Bundle {
   
   open var resolvedExecutablePath : String? {
     if let path = self.executablePath?.resolvedPath {
-      return nil //imageNames[path]
+      return imageNames[path]
     } else {
       return nil
     }
@@ -31,7 +32,7 @@ public extension Bundle {
     } else if let executablePath = self.resolvedExecutablePath {
       return NSString(string: executablePath).utf8String
     } else {
-      return nil
+      return NSString(string: self.bundlePath).utf8String
     }
   }
 }

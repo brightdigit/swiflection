@@ -50,8 +50,6 @@ open class SLClass /*: CustomStringConvertible */{
   }
   
   open class func classes (fromBundle bundle:SLBundle) -> [SLClass]? {
-    var ucount:UInt32 = 0
-    
     guard let imageName = bundle.bundle.imageName else {
       return nil
     }

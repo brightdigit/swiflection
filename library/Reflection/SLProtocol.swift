@@ -30,10 +30,11 @@ open class SLProtocol {
       return nil
     }
   }
-'(AnyClass?, UnsafeMutablePointer<UInt32>?) -> AutoreleasingUnsafeMutablePointer<Protocol>?'
-'(_, UnsafeMutablePointer<UInt32>) -> AutoreleasingUnsafeMutablePointer<_?>'
+//'(AnyClass?, UnsafeMutablePointer<UInt32>?) -> AutoreleasingUnsafeMutablePointer<Protocol>?'
+//'(_, UnsafeMutablePointer<UInt32>) -> AutoreleasingUnsafeMutablePointer<_?>'
   open class func protocols (fromClass cls:SLClass) -> [SLProtocol] {
-    return ArumpIterator(parameter: cls.class, method: class_copyProtocolList).map(SLProtocol.from)
+    
+    return ArumpSequence(parameter: cls.class, method: class_copyProtocolList)?.map(SLProtocol.from) ?? [SLProtocol]()
   }
   
   open class func from(objc_Protocol: Protocol) -> SLProtocol {

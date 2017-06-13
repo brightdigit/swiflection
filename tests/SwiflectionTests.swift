@@ -66,17 +66,21 @@ class SwiflectionTests: XCTestCase {
       line -> (String, [String]) in
       let lineComponents = line.components(separatedBy: ": ")
       let protocolSuffix = lineComponents[0]
-      let classSuffixes = lineComponents[1].components(separatedBy: " ")
-      return (protocolSuffix, classSuffixes)
+      let classNames = lineComponents[1].components(separatedBy: " ").map{"Class\($0)"}
+      return (protocolSuffix, classNames)
     }
     bundle.reflect { (bundle) in
-      expectation.fulfill()
       for protocolSet in protocolSets {
         let protocolName = "\(bundleIdentifier).Protocol\(protocolSet.0)"
-        bundle.classes.filter{
-          
-        }
+        let classNames = bundle.classes.filter{
+          (cls) -> Bool in
+          cls.protocols.contains(where: { (prtcl) -> Bool in
+            return prtcl.name == protocolName
+          })
+          }.map{ NSStringFromClass($0.class) }
+        XCTAssertEqual(protocolSet.1, classNames)
       }
+      expectation.fulfill()
      }
     self.waitForExpectations(timeout: 10.0) { (error) in
       XCTAssertNil(error)
