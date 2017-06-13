@@ -8,8 +8,6 @@
 import Foundation
 import Darwin
 
-
-
 func randomNumber(inTheRangeOf range: CountableClosedRange<Int>) -> Int {
   return Int(arc4random_uniform(UInt32(range.upperBound - range.lowerBound))) + range.lowerBound
 }

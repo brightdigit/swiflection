@@ -15,6 +15,7 @@
 		B388F8F01EE72501003221D5 /* ArumpIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F208D1EE715C700A3F22C /* ArumpIterator.swift */; };
 		B388F8F11EE7255F003221D5 /* String.cString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F208F1EE715C700A3F22C /* String.cString.swift */; };
 		B388F8F21EE72883003221D5 /* Array.Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F20861EE715C700A3F22C /* Array.Test.swift */; };
+		B38B8D9E1EEF7074000A0F26 /* Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B38B8D9B1EEF68BA000A0F26 /* Sample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,10 @@
 		B35F20951EE715C700A3F22C /* MapSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSource.swift; sourceTree = "<group>"; };
 		B35F20961EE715C700A3F22C /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		B388F8ED1EE72297003221D5 /* SwiflectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiflectionTests.swift; sourceTree = "<group>"; };
+		B38B8D9B1EEF68BA000A0F26 /* Sample.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sample.framework; path = Products/Debug/Build/Sample.framework; sourceTree = "<group>"; };
+		B38B8D9C1EEF68D1000A0F26 /* Sample */ = {isa = PBXFileReference; lastKnownFileType = text; name = Sample; path = Sample.framework/Versions/A/Sample; sourceTree = "<group>"; };
+		B38B8D9D1EEF701C000A0F26 /* Sample.swiftmodule */ = {isa = PBXFileReference; lastKnownFileType = file; name = Sample.swiftmodule; path = Products/Debug/Build/Sample.swiftmodule; sourceTree = "<group>"; };
+		B38B8DA01EEF70C0000A0F26 /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B38B8D9E1EEF7074000A0F26 /* Sample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +99,7 @@
 		B313C1E71EEB6AE500126F5A /* swifticator */ = {
 			isa = PBXGroup;
 			children = (
+				B38B8DA01EEF70C0000A0F26 /* build.sh */,
 				B313C1E81EEB6AE500126F5A /* main.swift */,
 			);
 			path = swifticator;
@@ -107,6 +114,7 @@
 				B35F207A1EE7154300A3F22C /* Swiflection-macOSTests */,
 				B313C1E71EEB6AE500126F5A /* swifticator */,
 				B35F206E1EE7154200A3F22C /* Products */,
+				B38B8D9A1EEF68B9000A0F26 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,6 +196,16 @@
 				B388F8ED1EE72297003221D5 /* SwiflectionTests.swift */,
 			);
 			path = tests;
+			sourceTree = "<group>";
+		};
+		B38B8D9A1EEF68B9000A0F26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B38B8D9D1EEF701C000A0F26 /* Sample.swiftmodule */,
+				B38B8D9C1EEF68D1000A0F26 /* Sample */,
+				B38B8D9B1EEF68BA000A0F26 /* Sample.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,6 +404,10 @@
 				DEVELOPMENT_TEAM = MLT7M394S7;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Products/Debug/Build",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -444,6 +466,10 @@
 				DEVELOPMENT_TEAM = MLT7M394S7;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Products/Debug/Build",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -741,6 +767,7 @@
 				B313C1EB1EEB6AE500126F5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B35F20651EE714AB00A3F22C /* Build configuration list for PBXProject "Swiflection" */ = {
 			isa = XCConfigurationList;
