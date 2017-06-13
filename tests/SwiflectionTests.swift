@@ -24,7 +24,7 @@ import Foundation
 //let sampleClass = "\(samplePrefix).SampleClass"
 //let sampleProtocol = "\(samplePrefix).SampleProtocolA"
 //
-let imageNames = UmpSequence(method: objc_copyImageNames).map(String.init(cString:)).dictionary{ ($0.resolvedPath, $0)}
+
 
 //let imageNames : [String] = UmpIterator(method: objc_copyImageNames).
 
@@ -67,119 +67,8 @@ class SwiflectionTests: XCTestCase {
     }
   }
   
-  open class func classes (fromBundle bundle:Bundle) -> [AnyClass]? {
-    
-    var ucount:UInt32 = 0
-    guard let imageName = bundle.imageName else {
-      return nil
-    }
-    
-    guard let collection = UmpSequence(parameter: imageName, method: objc_copyClassNamesForImage) else {
-      return nil
-    }
-    
-      return collection.flatMap {
-        objc_lookUpClass($0)
-      }
-  }
-//      return UmpSequence<UnsafePointer<Int8>>(parameter: bundle.imageName, method: objc_copyClassNamesForImage)
-//    if let imageName = bundle.imageName {
-//      return UmpSequence(parameter: imageName, method: objc_copyClassNamesForImage)
-//    } else {
-//      return imageNames.values
-//    }
-  
-  /*
- (UnsafePointer<Int8>, UnsafeMutablePointer<UInt32>?) -> UnsafeMutablePointer<UnsafePointer<Int8>>?'
-   
- (_, UnsafeMutablePointer<UInt32>?) -> UnsafeMutablePointer<_>?'
- */
   func testFactory() {
-    let bundle = Bundle(for: type(of: self))
-    let classes = type(of: self).classes(fromBundle: bundle)
-    
-    let testA = TestProtocolA.self
-    
-    let prtcl = objc_getProtocol("Swiflection_macOSTests.TestProtocolA".cString)
-    let conformsToClasses = classes?.filter{
-      class_conformsToProtocol($0, prtcl)
-    }
-    
-    let item = conformsToClasses?.first as? TestProtocolA.Type
-    debugPrint(item?.build().value)
-    
-//    let slBundle = bundle.reflection
-//    slBundle.classes.whichAdopt(
-    
-    //objc_getClassList(bundle, <#T##bufferCount: Int32##Int32#>)
-//    var error: NSErrorPointer? = nil
-//    var objs = SLQuery.from.allClasses.filter{
-//      $0.adoptsProtocol(name: sampleProtocol)
-//      }.map{
-//      [$0.build()]
-//    }.execute(error: error)
-//
-//    XCTAssert(objs.count < 1, "not returning valid object")
-    /*
-    var methods = SLQuery.from.allClasses.filter{
-      (slc) -> Bool in
-      return slc.name == sampleClass
-    }.map{
-      (slc) -> [SLMethod] in
-      var sel = Selector("init")
-      if let method = slc.method(sel) {
-        return [method]
-      } else {
-        return []
-      }
-    }.execute(error: error)
-    
-    var obj = methods[0].closure() as? SampleClass
-*/
-    //XCTAssert(obj != nil, "not returning valid object")
+    let bundle = Bundle!(path: "Sample.framework")
   }
-  
-//  func testLoadLibrary() {
-//    var expectation = self.expectation(description: "expectation")
-//    var query = SLQuery.from.allBundles.filter{
-//      (bundle) -> Bool in
-//      return bundle.nsBundle.bundlePath.pathExtension == "xctest"
-//    }.map{
-//      (bundle) -> [String] in
-//      return [bundle.nsBundle.bundlePath.stringByDeletingLastPathComponent]
-//    }.map{
-//      (directory) -> [SLBundle] in
-//      let bundlePath = directory.stringByAppendingPathComponent(sampleLibrary)
-//      let bundle = SLBundle(path: bundlePath)
-//      if bundle != nil {
-//        return [bundle!]
-//      } else {
-//        return []
-//      }
-//    }.map{
-//      (bundle) -> [SLClass] in
-//      return bundle.classes
-//    }.filter {
-//      (cls) -> Bool in
-//      return cls.adoptsProtocol(name: sampleProtocol)
-//    }.map{
-//      (cls) -> [SLProtocol] in
-//      return cls.protocols
-//    }.map{
-//      (ptl) -> [String] in
-//      return [ptl.name]
-//    }
-//    
-//    query.execute{
-//      (protocols, error) in
-//      println(protocols)
-//      XCTAssert(protocols.count == 2)
-//      expectation.fulfill()
-//    }
-//    
-//    self.waitForExpectations(withTimeout: 10, handler: {
-//      error in
-//      println(error)
-//    })  }
   
 }

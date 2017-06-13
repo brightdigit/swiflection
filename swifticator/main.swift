@@ -69,6 +69,6 @@ code.append(classes.map{ "public class Class\($0.map(String.init).joined(separat
 let list = protocols.map{ "\($0.key): \($0.value.joined(separator: " "))" }.joined(separator: "\n")
 
 try! code.joined(separator: "\n").write(to: swiftCodeFileURL, atomically: true, encoding: .utf8)
-print("wrote to \(swiftCodeFileURL).")
+print("wrote code to \(swiftCodeFileURL).")
 try! list.write(to: protocolListURL, atomically: true, encoding: .utf8)
-print("wrote to \(protocolListURL).")
+print("wrote protoocols to \(protocolListURL).")

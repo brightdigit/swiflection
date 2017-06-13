@@ -261,6 +261,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B35F20841EE7154300A3F22C /* Build configuration list for PBXNativeTarget "Swiflection-macOSTests" */;
 			buildPhases = (
+				B3D6C6951EF019F900AB054F /* ShellScript */,
 				B35F20721EE7154300A3F22C /* Sources */,
 				B35F20731EE7154300A3F22C /* Frameworks */,
 				B35F20741EE7154300A3F22C /* Resources */,
@@ -331,6 +332,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B3D6C6951EF019F900AB054F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sh ${SRCROOT}/build.sh Sample protocols";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B313C1E21EEB6AE500126F5A /* Sources */ = {
