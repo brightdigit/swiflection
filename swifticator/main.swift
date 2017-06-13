@@ -31,11 +31,11 @@ let minimumNumberOfClasses = 20
 let maximumNumberOfClasses = 40
 let rangeOfNumberOfClasses = minimumNumberOfClasses...maximumNumberOfClasses
 
+let currentDirectoryURL = URL(fileURLWithPath: FileManager.default.currentDirectoryPath, isDirectory: true)
 
-let swiftCodeFileURL : URL =  URL(fileURLWithPath: FileManager.default.currentDirectoryPath, isDirectory: true).appendingPathComponent("code.swift")
+let swiftCodeFileURL = URL(fileURLWithPath: CommandLine.arguments[1], relativeTo: currentDirectoryURL)
 
-
-let protocolListURL : URL =  URL(fileURLWithPath: FileManager.default.currentDirectoryPath, isDirectory: true).appendingPathComponent("protocols.txt")
+let protocolListURL = URL(fileURLWithPath: CommandLine.arguments[2], relativeTo: currentDirectoryURL)
 
 let numberOfClasses = randomNumber(inTheRangeOf: rangeOfNumberOfClasses)
 
