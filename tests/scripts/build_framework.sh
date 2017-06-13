@@ -1,7 +1,6 @@
 #!/bin/bash
 CODE=`mktemp`.swift
-
-swift main.swift $CODE $2
+swift $3 $CODE $2
 mkdir -p $1.framework
 mkdir -p $1.framework/Versions/A/Modules/Sample.swiftmodule
 ln -sf A $1.framework/Versions/Current
