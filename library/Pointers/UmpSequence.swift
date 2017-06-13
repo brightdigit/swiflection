@@ -24,12 +24,12 @@ open class UmpSequence<T> : BidirectionalCollection {
     self.pointer = pointer
     self.ucount = count
   }
-  //objc_copyClassNamesForImage(_ image: UnsafePointer<Int8>, _ outCount: UnsafeMutablePointer<UInt32>?) -> UnsafeMutablePointer<UnsafePointer<Int8>>?
+  
   public convenience init?<U>(parameter: U, method: (U, UnsafeMutablePointer<UInt32>?) -> UnsafeMutablePointer<T>?) {
     var ucount:UInt32 = 0
-  guard let pointer = method(parameter, &ucount) else {
-  return nil
-  }
+    guard let pointer = method(parameter, &ucount) else {
+      return nil
+    }
     self.init(pointer: pointer, count: ucount)
   }
   

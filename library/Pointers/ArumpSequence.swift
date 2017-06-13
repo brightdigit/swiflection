@@ -8,9 +8,9 @@
 
 import Foundation
 
-open class ArumpIterator<T> {
-  fileprivate let pointer:AutoreleasingUnsafeMutablePointer<T?>
-  fileprivate let ucount:UInt32
+open class ArumpSequence<T> : BidirectionalCollection {
+  private let pointer:AutoreleasingUnsafeMutablePointer<T?>
+  private let ucount:UInt32
   
   public init (pointer: AutoreleasingUnsafeMutablePointer<T?>, count: UInt32) {
     self.pointer = pointer

@@ -57,7 +57,30 @@ class SwiflectionTests: XCTestCase {
   
   func testExample() {
     // This is an example of a functional test case.
-    XCTAssert(true, "Pass")
+    let bundleIdentifier = "com.brightdigit.Sample"
+    let bundle = Bundle(identifier: bundleIdentifier)!
+    let url = bundle.url(forResource: "protocols", withExtension: nil)!
+    let protocolText = try! String(contentsOf: url)
+    let expectation = self.expectation(description: "")
+    let protocolSets = protocolText.components(separatedBy: "\n").map{
+      line -> (String, [String]) in
+      let lineComponents = line.components(separatedBy: ": ")
+      let protocolSuffix = lineComponents[0]
+      let classSuffixes = lineComponents[1].components(separatedBy: " ")
+      return (protocolSuffix, classSuffixes)
+    }
+    bundle.reflect { (bundle) in
+      expectation.fulfill()
+      for protocolSet in protocolSets {
+        let protocolName = "\(bundleIdentifier).Protocol\(protocolSet.0)"
+        bundle.classes.filter{
+          
+        }
+      }
+     }
+    self.waitForExpectations(timeout: 10.0) { (error) in
+      XCTAssertNil(error)
+    }
   }
   
   func testPerformanceExample() {
@@ -67,8 +90,77 @@ class SwiflectionTests: XCTestCase {
     }
   }
   
-  func testFactory() {
-    let bundle = Bundle!(path: "Sample.framework")
+  
+//  open class func classes (fromBundle bundle:Bundle) -> [AnyClass]? {
+//
+//    var ucount:UInt32 = 0
+//    guard let imageName = bundle.imageName else {
+//      return nil
+//    }
+//
+//    guard let collection = UmpSequence(parameter: imageName, method: objc_copyClassNamesForImage) else {
+//      return nil
+//    }
+//
+//      return collection.flatMap {
+//        objc_lookUpClass($0)
+//      }
+//  }
+//      return UmpSequence<UnsafePointer<Int8>>(parameter: bundle.imageName, method: objc_copyClassNamesForImage)
+//    if let imageName = bundle.imageName {
+//      return UmpSequence(parameter: imageName, method: objc_copyClassNamesForImage)
+//    } else {
+//      return imageNames.values
+//    }
+  
+  /*
+ (UnsafePointer<Int8>, UnsafeMutablePointer<UInt32>?) -> UnsafeMutablePointer<UnsafePointer<Int8>>?'
+   
+ (_, UnsafeMutablePointer<UInt32>?) -> UnsafeMutablePointer<_>?'
+ */
+  //func testFactory() {
+//    let bundle = Bundle(for: type(of: self))
+//    let classes = type(of: self).classes(fromBundle: bundle)
+//
+//    let testA = TestProtocolA.self
+//
+//    let prtcl = objc_getProtocol("Swiflection_macOSTests.TestProtocolA".cString)
+//    let conformsToClasses = classes?.filter{
+//      class_conformsToProtocol($0, prtcl)
+//    }
+//
+//    let item = conformsToClasses?.first as? TestProtocolA.Type
+//    debugPrint(item?.build().value)
+    
+//    let slBundle = bundle.reflection
+//    slBundle.classes.whichAdopt(
+    
+    //objc_getClassList(bundle, <#T##bufferCount: Int32##Int32#>)
+//    var error: NSErrorPointer? = nil
+//    var objs = SLQuery.from.allClasses.filter{
+//      $0.adoptsProtocol(name: sampleProtocol)
+//      }.map{
+//      [$0.build()]
+//    }.execute(error: error)
+//
+//    XCTAssert(objs.count < 1, "not returning valid object")
+    /*
+    var methods = SLQuery.from.allClasses.filter{
+      (slc) -> Bool in
+      return slc.name == sampleClass
+    }.map{
+      (slc) -> [SLMethod] in
+      var sel = Selector("init")
+      if let method = slc.method(sel) {
+        return [method]
+      } else {
+        return []
+      }
+    }.execute(error: error)
+    
+    var obj = methods[0].closure() as? SampleClass
+*/
+    //XCTAssert(obj != nil, "not returning valid object")
   }
   
-}
+

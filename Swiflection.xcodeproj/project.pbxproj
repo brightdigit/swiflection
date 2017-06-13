@@ -11,9 +11,10 @@
 		B35F207E1EE7154300A3F22C /* Swiflection_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = B35F20701EE7154200A3F22C /* Swiflection_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B388F8EE1EE7229C003221D5 /* SwiflectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B388F8ED1EE72297003221D5 /* SwiflectionTests.swift */; };
 		B388F8EF1EE724FF003221D5 /* UmpSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F208E1EE715C700A3F22C /* UmpSequence.swift */; };
-		B388F8F01EE72501003221D5 /* ArumpIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F208D1EE715C700A3F22C /* ArumpIterator.swift */; };
+		B388F8F01EE72501003221D5 /* ArumpSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F208D1EE715C700A3F22C /* ArumpSequence.swift */; };
 		B388F8F11EE7255F003221D5 /* String.cString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F208F1EE715C700A3F22C /* String.cString.swift */; };
 		B388F8F21EE72883003221D5 /* Array.Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F20861EE715C700A3F22C /* Array.Test.swift */; };
+		B38A37F51EF0316F006CB496 /* SLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F208A1EE715C700A3F22C /* SLProtocol.swift */; };
 		B3D6C6AC1EF01EA100AB054F /* Sample.h in Headers */ = {isa = PBXBuildFile; fileRef = B3D6C6AA1EF01EA100AB054F /* Sample.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B3D6C6B91EF0230500AB054F /* Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D6C6A81EF01EA100AB054F /* Sample.framework */; };
 		B3D6C6BA1EF023EC00AB054F /* protocols in Resources */ = {isa = PBXBuildFile; fileRef = B3D6C6B71EF0201F00AB054F /* protocols */; };
@@ -42,7 +43,7 @@
 		B35F20891EE715C700A3F22C /* SLClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLClass.swift; sourceTree = "<group>"; };
 		B35F208A1EE715C700A3F22C /* SLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLProtocol.swift; sourceTree = "<group>"; };
 		B35F208B1EE715C700A3F22C /* SLQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLQuery.swift; sourceTree = "<group>"; };
-		B35F208D1EE715C700A3F22C /* ArumpIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArumpIterator.swift; sourceTree = "<group>"; };
+		B35F208D1EE715C700A3F22C /* ArumpSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArumpSequence.swift; sourceTree = "<group>"; };
 		B35F208E1EE715C700A3F22C /* UmpSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmpSequence.swift; sourceTree = "<group>"; };
 		B35F208F1EE715C700A3F22C /* String.cString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.cString.swift; sourceTree = "<group>"; };
 		B35F20901EE715C700A3F22C /* Lazy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lazy.swift; sourceTree = "<group>"; };
@@ -157,7 +158,7 @@
 		B35F208C1EE715C700A3F22C /* Pointers */ = {
 			isa = PBXGroup;
 			children = (
-				B35F208D1EE715C700A3F22C /* ArumpIterator.swift */,
+				B35F208D1EE715C700A3F22C /* ArumpSequence.swift */,
 				B35F208E1EE715C700A3F22C /* UmpSequence.swift */,
 			);
 			path = Pointers;
@@ -390,8 +391,9 @@
 				B388F8F21EE72883003221D5 /* Array.Test.swift in Sources */,
 				B388F8F11EE7255F003221D5 /* String.cString.swift in Sources */,
 				B388F8EF1EE724FF003221D5 /* UmpSequence.swift in Sources */,
-				B388F8F01EE72501003221D5 /* ArumpIterator.swift in Sources */,
+				B388F8F01EE72501003221D5 /* ArumpSequence.swift in Sources */,
 				B3D6C6BB1EF025A500AB054F /* SLBundle.swift in Sources */,
+				B38A37F51EF0316F006CB496 /* SLProtocol.swift in Sources */,
 				B3D6C6BC1EF025BA00AB054F /* SLClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -865,6 +867,7 @@
 				B3D6C6AF1EF01EA100AB054F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

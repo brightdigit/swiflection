@@ -44,7 +44,7 @@ public struct SLBundle : SLBundleProtocol {
   public let bundle:Bundle
   
   public var classes: [SLClass] {
-    return SLClass.classes(fromBundle: self)
+    return SLClass.classes(fromBundle: self) ?? [SLClass]()
   }
 //  fileprivate var _classes:[SLClass]?
 //
