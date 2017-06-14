@@ -10,7 +10,7 @@
 		B34F27431EF1AD0F00014EAD /* code.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6C6B61EF0201F00AB054F /* code.swift */; };
 		B34F27441EF1AD2500014EAD /* Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D6C6A81EF01EA100AB054F /* Sample.framework */; };
 		B34F274A1EF1B05100014EAD /* Sample.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B3D6C6A81EF01EA100AB054F /* Sample.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B35F20771EE7154300A3F22C /* swiflection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B35F206D1EE7154200A3F22C /* swiflection.framework */; };
+		B35F20771EE7154300A3F22C /* Swiflection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B35F206D1EE7154200A3F22C /* Swiflection.framework */; };
 		B35F207E1EE7154300A3F22C /* Swiflection_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = B35F20701EE7154200A3F22C /* Swiflection_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B388F8EE1EE7229C003221D5 /* SwiflectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B388F8ED1EE72297003221D5 /* SwiflectionTests.swift */; };
 		B388F8EF1EE724FF003221D5 /* UmpSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F208E1EE715C700A3F22C /* UmpSequence.swift */; };
@@ -48,7 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B35F206D1EE7154200A3F22C /* swiflection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = swiflection.framework; path = Swiflection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B35F206D1EE7154200A3F22C /* Swiflection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiflection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B35F20701EE7154200A3F22C /* Swiflection_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Swiflection_macOS.h; sourceTree = "<group>"; };
 		B35F20711EE7154200A3F22C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B35F20761EE7154300A3F22C /* Swiflection-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swiflection-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,7 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B34F27441EF1AD2500014EAD /* Sample.framework in Frameworks */,
-				B35F20771EE7154300A3F22C /* swiflection.framework in Frameworks */,
+				B35F20771EE7154300A3F22C /* Swiflection.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +122,7 @@
 		B35F206E1EE7154200A3F22C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B35F206D1EE7154200A3F22C /* swiflection.framework */,
+				B35F206D1EE7154200A3F22C /* Swiflection.framework */,
 				B35F20761EE7154300A3F22C /* Swiflection-macOSTests.xctest */,
 				B3D6C6A81EF01EA100AB054F /* Sample.framework */,
 			);
@@ -276,7 +276,7 @@
 			);
 			name = "Swiflection-macOS";
 			productName = "Swiflection-macOS";
-			productReference = B35F206D1EE7154200A3F22C /* swiflection.framework */;
+			productReference = B35F206D1EE7154200A3F22C /* Swiflection.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B35F20751EE7154300A3F22C /* Swiflection-macOSTests */ = {

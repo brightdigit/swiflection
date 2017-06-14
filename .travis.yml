@@ -1,20 +1,16 @@
 language: objective-c
-xcode_workspace: swiflection.xcworkspace
+xcode_project: swiflection.xcproject
 matrix:
   include:
-    #- xcode_scheme: Swiflection_IOS
-    #  xcode_sdk: iphoneos
-    #- xcode_scheme: Swiflection_IOS
-    #  xcode_sdk: iphoneos8.1
-    - xcode_scheme: Swiflection_IOS
-      xcode_sdk: iphonesimulator8.1
-    - xcode_scheme: Swiflection_OSX
+    # - xcode_scheme: Swiflection_IOS
+    #   xcode_sdk: iphonesimulator8.1
+    - xcode_scheme: Swiflection-macOS
       xcode_sdk: macosx
-    - xcode_scheme: Swiflection_OSX
+    - xcode_scheme: Swiflection-macOS
       xcode_sdk: macosx10.10
   exclude:
-    - xcode_scheme: 
-      xcode_sdk: 
+    - xcode_scheme:
+      xcode_sdk:
 before_script:
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/profile/iOSTeam_Provisioning_Profile_combrightdigit.mobileprovision.enc -d -a -out account/profile/iOSTeam_Provisioning_Profile_combrightdigit.mobileprovision
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/certs/dev.cer.enc -d -a -out account/certs/dev.cer
@@ -22,10 +18,10 @@ before_script:
 - ./scripts/add_key.sh
 after_script:
 - ./scripts/remove_key.sh
-rvm: 2.1.4 
-osx_image: xcode61
+rvm: 2.1.4
+osx_image: xcode9
 env:
-  global:  
+  global:
   - 'DEVELOPER_NAME="iPhone Developer: Leo Dion (5VZ4KT69B9)"'
   - PROFILE_NAME="iOSTeam_Provisioning_Profile_combrightdigit"
   - secure: EM6gOXtFKJmvANHD4OHG5cSIuJe1omIiiz1c4oqlduXuOiDINZw19ci3WrNpR9cAibeUNkKvw21BQR1BAf6eB2nsVglHXDW5d1KkQbmgJYiy3wWzyuZfXT5ES+y0BzBUIeFKzmxD0qGa+iiPtz4KXxwryJwd2Hy9lqFtY9BRWpw=
