@@ -1,5 +1,5 @@
 language: objective-c
-xcode_project: Swiflection.xcproject
+xcode_project: Swiflection.xcodeproj
 matrix:
   include:
     # - xcode_scheme: Swiflection_IOS
