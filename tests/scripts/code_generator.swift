@@ -23,12 +23,12 @@ extension Collection {
 var prtcls = [String]()
 let alphabet = "01234567890ABCDEFGHJKMNPQRTUVWXYZ"
 
-let minimumProtocolsPerClass = 1
-let maximumProtocolsPerClass = 5
+let minimumProtocolsPerClass = Int(CommandLine.arguments[3])!
+let maximumProtocolsPerClass = Int(CommandLine.arguments[4])!
 let rangeOfProtocolsPerClass = minimumProtocolsPerClass...maximumProtocolsPerClass
 
-let minimumNumberOfClasses = 20
-let maximumNumberOfClasses = 40
+let minimumNumberOfClasses = Int(CommandLine.arguments[5])!
+let maximumNumberOfClasses = Int(CommandLine.arguments[6])!
 let rangeOfNumberOfClasses = minimumNumberOfClasses...maximumNumberOfClasses
 
 let currentDirectoryURL = URL(fileURLWithPath: FileManager.default.currentDirectoryPath, isDirectory: true)
@@ -64,7 +64,7 @@ let protocols = classes.reduce([Character:[String]]()) { (dictionary, characters
 
 var code = ["import Foundation"]
 code.append(protocols.map{ "@objc public protocol Protocol\($0.key){}"}.joined(separator: "\n"))
-code.append(classes.map{ "public class Class\($0.map(String.init).joined(separator: "")): \($0.map{"Protocol\($0)"}.joined(separator: ", ")) {}"}.joined(separator: "\n"))
+code.append(classes.map{ "@objc public class Class\($0.map(String.init).joined(separator: "")): NSObject, \($0.map{"Protocol\($0)"}.joined(separator: ", ")) {}"}.joined(separator: "\n"))
 
 let list = protocols.map{ "\($0.key): \($0.value.joined(separator: " "))" }.joined(separator: "\n")
 

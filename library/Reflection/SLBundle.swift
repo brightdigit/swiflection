@@ -8,8 +8,7 @@
 
 import Foundation
 
-NSString(
-let imageNames = UmpSequence(method: objc_copyImageNames).map(NSString.init(cString:)).filter{ $0 != nil}.dictionary{ (String($0!.resolvingSymlinksInPath), String($0!)) }
+let imageNames = UmpSequence(method: objc_copyImageNames).map{NSString.init(cString:$0, encoding: String.Encoding.utf8.rawValue)}.filter{ $0 != nil}.dictionary{ (String($0!.resolvingSymlinksInPath), String($0!)) }
 
 public extension Bundle {
   public func reflect (_ closure: (SLBundleProtocol) -> Void) {
@@ -26,7 +25,6 @@ public extension Bundle {
     
   }
   open var imageName : CString? {
-    
     if let cls: AnyClass = self.principalClass {
       return class_getImageName(cls)
     } else if let executablePath = self.resolvedExecutablePath {
