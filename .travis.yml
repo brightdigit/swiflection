@@ -1,5 +1,5 @@
 language: objective-c
-xcode_project: swiflection.xcproject
+xcode_project: Swiflection.xcproject
 matrix:
   include:
     # - xcode_scheme: Swiflection_IOS
@@ -11,18 +11,18 @@ matrix:
   exclude:
     - xcode_scheme:
       xcode_sdk:
-before_script:
-- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/profile/iOSTeam_Provisioning_Profile_combrightdigit.mobileprovision.enc -d -a -out account/profile/iOSTeam_Provisioning_Profile_combrightdigit.mobileprovision
-- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/certs/dev.cer.enc -d -a -out account/certs/dev.cer
-- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/certs/dev.p12.enc -d -a -out account/certs/dev.p12
-- ./scripts/add_key.sh
-after_script:
-- ./scripts/remove_key.sh
-rvm: 2.1.4
+# before_script:
+# - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/profile/iOSTeam_Provisioning_Profile_combrightdigit.mobileprovision.enc -d -a -out account/profile/iOSTeam_Provisioning_Profile_combrightdigit.mobileprovision
+# - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/certs/dev.cer.enc -d -a -out account/certs/dev.cer
+# - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/certs/dev.p12.enc -d -a -out account/certs/dev.p12
+# - ./scripts/add_key.sh
+# after_script:
+# - ./scripts/remove_key.sh
+# rvm: 2.1.4
 osx_image: xcode9
-env:
-  global:
-  - 'DEVELOPER_NAME="iPhone Developer: Leo Dion (5VZ4KT69B9)"'
-  - PROFILE_NAME="iOSTeam_Provisioning_Profile_combrightdigit"
-  - secure: EM6gOXtFKJmvANHD4OHG5cSIuJe1omIiiz1c4oqlduXuOiDINZw19ci3WrNpR9cAibeUNkKvw21BQR1BAf6eB2nsVglHXDW5d1KkQbmgJYiy3wWzyuZfXT5ES+y0BzBUIeFKzmxD0qGa+iiPtz4KXxwryJwd2Hy9lqFtY9BRWpw=
-  - secure: l/OocnTNpJrx5nE/hSUyWm6Fj5VmL2XDVoPEeRwAajLNbXs389+ueeWwgkgUfAFrAxbPqTgrpWbgM8aKcPryZO2RrXOYiAhPH1b1vj71NDUYYJDT91p56ZuGkzhLASS67nT2g3REbjtEM4f5xbsEn5eZWKm/a9D1zlXOAxeasLI=
+# env:
+#   global:
+#   - 'DEVELOPER_NAME="iPhone Developer: Leo Dion (5VZ4KT69B9)"'
+#   - PROFILE_NAME="iOSTeam_Provisioning_Profile_combrightdigit"
+#   - secure: EM6gOXtFKJmvANHD4OHG5cSIuJe1omIiiz1c4oqlduXuOiDINZw19ci3WrNpR9cAibeUNkKvw21BQR1BAf6eB2nsVglHXDW5d1KkQbmgJYiy3wWzyuZfXT5ES+y0BzBUIeFKzmxD0qGa+iiPtz4KXxwryJwd2Hy9lqFtY9BRWpw=
+#   - secure: l/OocnTNpJrx5nE/hSUyWm6Fj5VmL2XDVoPEeRwAajLNbXs389+ueeWwgkgUfAFrAxbPqTgrpWbgM8aKcPryZO2RrXOYiAhPH1b1vj71NDUYYJDT91p56ZuGkzhLASS67nT2g3REbjtEM4f5xbsEn5eZWKm/a9D1zlXOAxeasLI=
