@@ -27,7 +27,7 @@ class SwiflectionTests: XCTestCase {
     let imageNames = UmpSequence(method: objc_copyImageNames).map(String.init(cString:))
     print(imageNames)
     let bundleIdentifier = "com.brightdigit.Sample"
-    let moduleName = bundleIdentifier.replacingOccurrences(of: ".", with: "_")
+    let moduleName = bundleIdentifier.components(separatedBy: ".").last!
     let bundle = Bundle(identifier: bundleIdentifier)!
     
     let url = bundle.url(forResource: "protocols", withExtension: nil)!

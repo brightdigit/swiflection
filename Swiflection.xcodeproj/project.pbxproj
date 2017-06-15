@@ -69,21 +69,35 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B32247691EF20E9900CF06E4 /* PBXContainerItemProxy */ = {
+		B322476F1EF213D400CF06E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B35F20621EE714AB00A3F22C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3D6C6A71EF01EA100AB054F;
+			remoteInfo = "Sample-macOS";
+		};
+		B32247711EF213F500CF06E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B35F20621EE714AB00A3F22C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3B7EEAF1EF1BC400055115B;
+			remoteInfo = "Sample-tvOS";
+		};
+		B3312D261EF3068A006392D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B35F20621EE714AB00A3F22C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B32247641EF20E7E00CF06E4;
 			remoteInfo = "Sample-Code";
 		};
-		B322476B1EF20E9D00CF06E4 /* PBXContainerItemProxy */ = {
+		B3312D281EF30697006392D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B35F20621EE714AB00A3F22C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B32247641EF20E7E00CF06E4;
 			remoteInfo = "Sample-Code";
 		};
-		B322476D1EF20EA100CF06E4 /* PBXContainerItemProxy */ = {
+		B3312D2A1EF306A6006392D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B35F20621EE714AB00A3F22C /* Project object */;
 			proxyType = 1;
@@ -572,6 +586,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B32247701EF213D400CF06E4 /* PBXTargetDependency */,
 				B35F20791EE7154300A3F22C /* PBXTargetDependency */,
 			);
 			name = "Swiflection-macOSTests";
@@ -628,7 +643,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				B322476C1EF20E9D00CF06E4 /* PBXTargetDependency */,
+				B3312D291EF30697006392D9 /* PBXTargetDependency */,
 			);
 			name = "Sample-iOS";
 			productName = "Sample-iOS";
@@ -665,6 +680,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B32247721EF213F500CF06E4 /* PBXTargetDependency */,
 				B3B7EEDB1EF1C01A0055115B /* PBXTargetDependency */,
 			);
 			name = "Swiflection-tvOSTests";
@@ -684,7 +700,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				B322476E1EF20EA100CF06E4 /* PBXTargetDependency */,
+				B3312D271EF3068A006392D9 /* PBXTargetDependency */,
 			);
 			name = "Sample-tvOS";
 			productName = "Sample-tvOS";
@@ -703,7 +719,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				B322476A1EF20E9900CF06E4 /* PBXTargetDependency */,
+				B3312D2B1EF306A6006392D9 /* PBXTargetDependency */,
 			);
 			name = "Sample-macOS";
 			productName = Sample;
@@ -958,20 +974,30 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B322476A1EF20E9900CF06E4 /* PBXTargetDependency */ = {
+		B32247701EF213D400CF06E4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B32247641EF20E7E00CF06E4 /* Sample-Code */;
-			targetProxy = B32247691EF20E9900CF06E4 /* PBXContainerItemProxy */;
+			target = B3D6C6A71EF01EA100AB054F /* Sample-macOS */;
+			targetProxy = B322476F1EF213D400CF06E4 /* PBXContainerItemProxy */;
 		};
-		B322476C1EF20E9D00CF06E4 /* PBXTargetDependency */ = {
+		B32247721EF213F500CF06E4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B32247641EF20E7E00CF06E4 /* Sample-Code */;
-			targetProxy = B322476B1EF20E9D00CF06E4 /* PBXContainerItemProxy */;
+			target = B3B7EEAF1EF1BC400055115B /* Sample-tvOS */;
+			targetProxy = B32247711EF213F500CF06E4 /* PBXContainerItemProxy */;
 		};
-		B322476E1EF20EA100CF06E4 /* PBXTargetDependency */ = {
+		B3312D271EF3068A006392D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B32247641EF20E7E00CF06E4 /* Sample-Code */;
-			targetProxy = B322476D1EF20EA100CF06E4 /* PBXContainerItemProxy */;
+			targetProxy = B3312D261EF3068A006392D9 /* PBXContainerItemProxy */;
+		};
+		B3312D291EF30697006392D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B32247641EF20E7E00CF06E4 /* Sample-Code */;
+			targetProxy = B3312D281EF30697006392D9 /* PBXContainerItemProxy */;
+		};
+		B3312D2B1EF306A6006392D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B32247641EF20E7E00CF06E4 /* Sample-Code */;
+			targetProxy = B3312D2A1EF306A6006392D9 /* PBXContainerItemProxy */;
 		};
 		B35F20791EE7154300A3F22C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1012,7 +1038,6 @@
 			buildSettings = {
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_MODULE_NAME = "$(PROJECT_NAME:c99extidentifier)";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -1022,7 +1047,6 @@
 			buildSettings = {
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_MODULE_NAME = "$(PROJECT_NAME:c99extidentifier)";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -1597,7 +1621,6 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brightdigit.Sample;
-				PRODUCT_MODULE_NAME = "$(PRODUCT_BUNDLE_IDENTIFIER:c99extidentifier)";
 				PRODUCT_NAME = Sample;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1661,7 +1684,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brightdigit.Sample;
-				PRODUCT_MODULE_NAME = "$(PRODUCT_BUNDLE_IDENTIFIER:c99extidentifier)";
 				PRODUCT_NAME = Sample;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1986,7 +2008,6 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brightdigit.Sample;
-				PRODUCT_MODULE_NAME = "$(PRODUCT_BUNDLE_IDENTIFIER:c99extidentifier)";
 				PRODUCT_NAME = Sample;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
@@ -2051,7 +2072,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brightdigit.Sample;
-				PRODUCT_MODULE_NAME = "$(PRODUCT_BUNDLE_IDENTIFIER:c99extidentifier)";
 				PRODUCT_NAME = Sample;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
@@ -2126,7 +2146,6 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brightdigit.Sample;
-				PRODUCT_MODULE_NAME = "$(PRODUCT_BUNDLE_IDENTIFIER:c99extidentifier)";
 				PRODUCT_NAME = Sample;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -2192,7 +2211,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brightdigit.Sample;
-				PRODUCT_MODULE_NAME = "$(PRODUCT_BUNDLE_IDENTIFIER:c99extidentifier)";
 				PRODUCT_NAME = Sample;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -2213,6 +2231,7 @@
 				B32247661EF20E7E00CF06E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B35F20651EE714AB00A3F22C /* Build configuration list for PBXProject "Swiflection" */ = {
 			isa = XCConfigurationList;

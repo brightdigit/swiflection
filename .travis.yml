@@ -1,14 +1,23 @@
 language: objective-c
+osx_image: xcode9
 xcode_project: Swiflection.xcodeproj
-matrix:
-  include:
-    # - xcode_scheme: Swiflection_IOS
-    #   xcode_sdk: iphonesimulator8.1
-    - xcode_scheme: Swiflection-macOS
-      xcode_sdk: macosx
-  exclude:
-    - xcode_scheme:
-      xcode_sdk:
+env:
+  global:
+  - LC_CTYPE=en_US.UTF-8
+  - LANG=en_US.UTF-8
+  - WORKSPACE="Swiflection.xcodeproj"
+  - IOS_FRAMEWORK_SCHEME="SwiftVer iOS"
+  - IOS_SDK=iphonesimulator10.0
+  - EXAMPLE_SCHEME="iOS Example"
+  - POD_LINT="YES"
+  matrix:
+    - DESTINATION="OS=10.0,name=iPhone 7 Plus"     SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     POD_LINT="NO"
+script:
+  - set -o pipefail
+  - xcodebuild -version
+  - xcodebuild -showsdks
+  - xcodebuild -list
+  - ./build.sh
 # before_script:
 # - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/profile/iOSTeam_Provisioning_Profile_combrightdigit.mobileprovision.enc -d -a -out account/profile/iOSTeam_Provisioning_Profile_combrightdigit.mobileprovision
 # - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in account/certs/dev.cer.enc -d -a -out account/certs/dev.cer
@@ -17,7 +26,6 @@ matrix:
 # after_script:
 # - ./scripts/remove_key.sh
 # rvm: 2.1.4
-osx_image: xcode9
 # env:
 #   global:
 #   - 'DEVELOPER_NAME="iPhone Developer: Leo Dion (5VZ4KT69B9)"'
