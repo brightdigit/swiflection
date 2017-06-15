@@ -6,8 +6,6 @@ matrix:
     #   xcode_sdk: iphonesimulator8.1
     - xcode_scheme: Swiflection-macOS
       xcode_sdk: macosx
-    - xcode_scheme: Swiflection-macOS
-      xcode_sdk: macosx10.10
   exclude:
     - xcode_scheme:
       xcode_sdk:
