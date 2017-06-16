@@ -8,7 +8,11 @@
 
 import Foundation
 
-open class SLProtocol {
+open class SLProtocol : Equatable {
+  public static func ==(lhs: SLProtocol, rhs: SLProtocol) -> Bool {
+    return protocol_isEqual(lhs.objc_Protocol, rhs.objc_Protocol)
+  }
+  
   open let objc_Protocol:Protocol!
   fileprivate var _name:String?
   
@@ -23,15 +27,6 @@ open class SLProtocol {
     self.objc_Protocol = objc_Protocol
   }
   
-  public init?(name: String) {
-    if let objc_Protocol = objc_getProtocol(name.cString) {
-      self.objc_Protocol = objc_Protocol
-    } else {
-      return nil
-    }
-  }
-//'(AnyClass?, UnsafeMutablePointer<UInt32>?) -> AutoreleasingUnsafeMutablePointer<Protocol>?'
-//'(_, UnsafeMutablePointer<UInt32>) -> AutoreleasingUnsafeMutablePointer<_?>'
   open class func protocols (fromClass cls:SLClass) -> [SLProtocol] {
     
     return ArumpSequence(parameter: cls.class, method: class_copyProtocolList)?.map(SLProtocol.from) ?? [SLProtocol]()

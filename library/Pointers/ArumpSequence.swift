@@ -23,17 +23,11 @@ open class ArumpSequence<T> : BidirectionalCollection {
   }
   
   public convenience init?<U>(parameter: U, method: (U, UnsafeMutablePointer<UInt32>?) -> AutoreleasingUnsafeMutablePointer<T>?) {
-  var ucount:UInt32 = 0
-  guard let pointer = method(parameter, &ucount) else {
-  return nil
-  }
-  
-  self.init(pointer: pointer, count: ucount)
-  }
-  
-  public convenience init (method: (UnsafeMutablePointer<UInt32>) -> AutoreleasingUnsafeMutablePointer<T>) {
     var ucount:UInt32 = 0
-    let pointer = method(&ucount)
+    guard let pointer = method(parameter, &ucount) else {
+      return nil
+    }
+    
     self.init(pointer: pointer, count: ucount)
   }
   
@@ -55,5 +49,5 @@ open class ArumpSequence<T> : BidirectionalCollection {
   public var endIndex: UInt32 {
     return self.ucount
   }
-
+  
 }

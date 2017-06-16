@@ -8,7 +8,6 @@
 
 import Foundation
 
-let imageNames = UmpSequence(method: objc_copyImageNames).map{NSString.init(cString:$0, encoding: String.Encoding.utf8.rawValue)}.filter{ $0 != nil}.dictionary{ (String($0!.resolvingSymlinksInPath), String($0!)) }
 
 public extension Bundle {
   public func reflect (_ closure: (SLBundleProtocol) -> Void) {
@@ -16,21 +15,21 @@ public extension Bundle {
     closure(slBundle)
   }
   
-  open var resolvedExecutablePath : String? {
+  public var resolvedExecutablePath : String? {
     if let path = self.executablePath?.resolvedPath {
-      return imageNames[path]
+      return SLBundle.imageNames[path]
     } else {
       return nil
     }
     
   }
-  open var imageName : CString? {
+  public var imageName : CString? {
     if let cls: AnyClass = self.principalClass {
       return class_getImageName(cls)
     } else if let executablePath = self.resolvedExecutablePath {
       return NSString(string: executablePath).utf8String
     } else {
-      return NSString(string: self.bundlePath).utf8String
+      return nil
     }
   }
 }
@@ -40,6 +39,9 @@ public protocol SLBundleProtocol {
 }
 
 public struct SLBundle : SLBundleProtocol {
+  
+  public static let imageNames = UmpSequence(method: objc_copyImageNames).map{NSString.init(cString:$0, encoding: String.Encoding.utf8.rawValue)}.filter{ $0 != nil}.dictionary{ (String($0!.resolvingSymlinksInPath), String($0!)) }
+  
   public let bundle:Bundle
   
   public var classes: [SLClass] {

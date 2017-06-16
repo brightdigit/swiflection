@@ -9,24 +9,6 @@
 import Foundation
 
 extension Array {
-  func every(_ closure: (Element) -> Bool) -> Bool {
-    for item in self {
-      if !closure(item) {
-        return false
-      }
-    }
-    return true
-  }
-  
-  func some(_ closure: (Element) -> Bool) -> Bool {
-    for item in self {
-      if closure(item) {
-        return true
-      }
-    }
-    return false
-  }
-  
   func dictionary<K,V>(_ transformer: (Element) -> (K, V)?) -> [K:V] {
     return self.reduce([:]) {
       (dict, e) in

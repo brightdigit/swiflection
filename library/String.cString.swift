@@ -14,8 +14,10 @@ public extension String {
   public var cString : CString {
     return NSString(string: self).utf8String!
   }
-  
-  func beginsWith (_ prefix: String) -> Bool {
-    return self.hasPrefix(prefix)
+}
+
+extension String {
+  public var resolvedPath : String  {
+    return NSString(string: self).resolvingSymlinksInPath
   }
 }
