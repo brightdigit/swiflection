@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8F2D59B3E1ADD3E288C548D3 /* Pods_swiflection_ios_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2688D6206A7FE7288984D04 /* Pods_swiflection_ios_app.framework */; };
+		B30269A82041038600399646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30269A72041038600399646 /* AppDelegate.swift */; };
+		B30269AA2041038600399646 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30269A92041038600399646 /* ViewController.swift */; };
+		B30269AD2041038600399646 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B30269AB2041038600399646 /* Main.storyboard */; };
+		B30269AF2041038800399646 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B30269AE2041038800399646 /* Assets.xcassets */; };
+		B30269B22041038800399646 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B30269B02041038800399646 /* LaunchScreen.storyboard */; };
+		B30269BB2041071400399646 /* Template.stencil in Resources */ = {isa = PBXBuildFile; fileRef = B30269BA2041071400399646 /* Template.stencil */; };
+		B30269BD204107E200399646 /* generated in Resources */ = {isa = PBXBuildFile; fileRef = B30269BC204107E200399646 /* generated */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A38BC62F66E1757E41D34FE /* Pods-swiflection-ios-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiflection-ios-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiflection-ios-app/Pods-swiflection-ios-app.release.xcconfig"; sourceTree = "<group>"; };
+		9E4FDE6117BF7467BE47110C /* Pods-swiflection-ios-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiflection-ios-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swiflection-ios-app/Pods-swiflection-ios-app.debug.xcconfig"; sourceTree = "<group>"; };
+		B30269A42041038600399646 /* swiflection-ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swiflection-ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B30269A72041038600399646 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B30269A92041038600399646 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B30269AC2041038600399646 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B30269AE2041038800399646 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B30269B12041038800399646 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B30269B32041038800399646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B30269BA2041071400399646 /* Template.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = Template.stencil; sourceTree = "<group>"; };
+		B30269BC204107E200399646 /* generated */ = {isa = PBXFileReference; lastKnownFileType = folder; path = generated; sourceTree = "<group>"; };
+		C2688D6206A7FE7288984D04 /* Pods_swiflection_ios_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swiflection_ios_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B30269A12041038600399646 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F2D59B3E1ADD3E288C548D3 /* Pods_swiflection_ios_app.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D284C5D6B4B36280D390BDB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E4FDE6117BF7467BE47110C /* Pods-swiflection-ios-app.debug.xcconfig */,
+				0A38BC62F66E1757E41D34FE /* Pods-swiflection-ios-app.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B30269992041032E00399646 = {
+			isa = PBXGroup;
+			children = (
+				B30269A62041038600399646 /* Source */,
+				B30269A52041038600399646 /* Products */,
+				3D284C5D6B4B36280D390BDB /* Pods */,
+				D6E3D8DA28B9AF86B2048311 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B30269A52041038600399646 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B30269A42041038600399646 /* swiflection-ios-app.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B30269A62041038600399646 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				B30269BC204107E200399646 /* generated */,
+				B30269B8204106DB00399646 /* templates */,
+				B30269A72041038600399646 /* AppDelegate.swift */,
+				B30269A92041038600399646 /* ViewController.swift */,
+				B30269AB2041038600399646 /* Main.storyboard */,
+				B30269AE2041038800399646 /* Assets.xcassets */,
+				B30269B02041038800399646 /* LaunchScreen.storyboard */,
+				B30269B32041038800399646 /* Info.plist */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		B30269B8204106DB00399646 /* templates */ = {
+			isa = PBXGroup;
+			children = (
+				B30269BA2041071400399646 /* Template.stencil */,
+			);
+			path = templates;
+			sourceTree = "<group>";
+		};
+		D6E3D8DA28B9AF86B2048311 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2688D6206A7FE7288984D04 /* Pods_swiflection_ios_app.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B30269A32041038600399646 /* swiflection-ios-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B30269B42041038800399646 /* Build configuration list for PBXNativeTarget "swiflection-ios-app" */;
+			buildPhases = (
+				B30269B72041067400399646 /* sourcery */,
+				0B4957562D7CECE151563F82 /* [CP] Check Pods Manifest.lock */,
+				B30269A02041038600399646 /* Sources */,
+				B30269A12041038600399646 /* Frameworks */,
+				B30269A22041038600399646 /* Resources */,
+				2F7F93C377F79B0992CC2145 /* [CP] Embed Pods Frameworks */,
+				387C05865DD8C16D4EC8C210 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "swiflection-ios-app";
+			productName = "swiflection-ios-app";
+			productReference = B30269A42041038600399646 /* swiflection-ios-app.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B302699A2041032E00399646 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					B30269A32041038600399646 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = B302699D2041032E00399646 /* Build configuration list for PBXProject "Swiflection" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B30269992041032E00399646;
+			productRefGroup = B30269A52041038600399646 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B30269A32041038600399646 /* swiflection-ios-app */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B30269A22041038600399646 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B30269BB2041071400399646 /* Template.stencil in Resources */,
+				B30269B22041038800399646 /* LaunchScreen.storyboard in Resources */,
+				B30269AF2041038800399646 /* Assets.xcassets in Resources */,
+				B30269AD2041038600399646 /* Main.storyboard in Resources */,
+				B30269BD204107E200399646 /* generated in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B4957562D7CECE151563F82 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-swiflection-ios-app-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2F7F93C377F79B0992CC2145 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swiflection-ios-app/Pods-swiflection-ios-app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		387C05865DD8C16D4EC8C210 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swiflection-ios-app/Pods-swiflection-ios-app-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B30269B72041067400399646 /* sourcery */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = sourcery;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/Sourcery/bin/sourcery\" --sources \"$SRCROOT/Source\" --templates \"$SRCROOT/Source/templates\" --output \"$SRCROOT/Source/generated\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B30269A02041038600399646 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B30269AA2041038600399646 /* ViewController.swift in Sources */,
+				B30269A82041038600399646 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B30269AB2041038600399646 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B30269AC2041038600399646 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B30269B02041038800399646 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B30269B12041038800399646 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B302699E2041032E00399646 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		B302699F2041032E00399646 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		B30269B52041038800399646 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E4FDE6117BF7467BE47110C /* Pods-swiflection-ios-app.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = MLT7M394S7;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Source/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brightdigit.swiflection-ios-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B30269B62041038800399646 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A38BC62F66E1757E41D34FE /* Pods-swiflection-ios-app.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = MLT7M394S7;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Source/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brightdigit.swiflection-ios-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B302699D2041032E00399646 /* Build configuration list for PBXProject "Swiflection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B302699E2041032E00399646 /* Debug */,
+				B302699F2041032E00399646 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B30269B42041038800399646 /* Build configuration list for PBXNativeTarget "swiflection-ios-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B30269B52041038800399646 /* Debug */,
+				B30269B62041038800399646 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B302699A2041032E00399646 /* Project object */;
+}

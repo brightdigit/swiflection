@@ -1,0 +1,10 @@
+{% for theProtocol in types.protocols %}
+{{ theProtocol.name }}
+{% for type in types.all|!protocol %}
+{% for protocolName in type.inheritedTypes %}
+{% if theProtocol.name == protocolName %}
+{{ type.name }}
+{% endif %}
+{% endfor %}
+{% endfor %}
+{% endfor %}
